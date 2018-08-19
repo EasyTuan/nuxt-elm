@@ -1,0 +1,11 @@
+@import './mixin';
+@import './iconfont';
+
+* {
+  word-break: break-all;
+}
+
+input[disabled] {
+  background: #fff;
+  opacity: 1;
+}

@@ -1,0 +1,35 @@
+{
+  "name": "nuxt-elm",
+  "version": "1.0.0",
+  "description": "Nuxt.js project",
+  "author": "[easytuan] <[easytuan@foxmail.com]>",
+  "private": true,
+  "license": "GPL",
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build && nuxt start",
+    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "precommit": "npm run lint"
+  },
+  "dependencies": {
+    "axios": "^0.18.0",
+    "mint-ui": "^2.2.13",
+    "nuxt": "^1.0.0",
+    "postcss-loader": "^3.0.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^8.2.1",
+    "eslint": "^4.15.0",
+    "eslint-friendly-formatter": "^3.0.0",
+    "eslint-loader": "^1.7.1",
+    "eslint-plugin-vue": "^4.0.0",
+    "less-loader": "^4.0.5",
+    "node-sass": "^4.5.3",
+    "postcss-loader": "^3.0.0",
+    "postcss-px2rem": "^0.3.0",
+    "sass-loader": "^6.0.5",
+    "sass-resources-loader": "^1.3.3",
+    "stylus": "^0.54.5",
+    "stylus-loader": "^3.0.2"
+  }
+}

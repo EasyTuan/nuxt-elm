@@ -1,0 +1,74 @@
+//******颜色变量******/
+$primary:    #4aa5f0;
+$secondary:  #f8c13b;
+$danger:     #d81e06;
+$blue:       #1070ff;
+$light:      #eee;
+$dark:       #333;
+
+// 背景图片地址和大小
+@mixin bg($url) {
+	background-image: url($url);
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+@mixin borderRadius($radius:4px) {
+    -webkit-border-radius: $radius;
+    -moz-border-radius: $radius;
+    -ms-border-radius: $radius;
+    -o-border-radius: $radius;
+    border-radius: $radius;
+}
+//定位全屏
+@mixin allcover{
+	position:fixed;
+	top:0;
+  left:0;
+  width: 100%;
+  height:100%;
+}
+
+//定位上下左右居中
+@mixin center {
+	position: absolute;
+	top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+
+//定位上下居中
+@mixin ct {
+	position: absolute;
+	top: 50%;
+  transform: translateY(-50%);
+}
+
+//定位上下居中
+@mixin cl {
+	position: absolute;
+	left: 50%;
+  transform: translateX(-50%);
+}
+
+//宽高
+@mixin wh($width, $height){
+	width: $width;
+	height: $height;
+}
+
+//字体大小，颜色
+@mixin sc($size, $color){
+	font-size: $size;
+	color: $color;
+}
+
+//flex 布局和 子元素 对其方式
+@mixin fj($type: space-between){
+  display: -webkit-flex;
+  display: -webkit-box;
+  display: flex;
+  -webkit-justify-content: $type;
+	justify-content: $type;
+}
