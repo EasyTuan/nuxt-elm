@@ -42,20 +42,20 @@ npm run build
 
 目录结构
 
-├── assets               // 静态资源
-│   ├── images                // 图片资源
-│   ├── services              // api请求
-│   ├── styles                // 样式文件
-│   └── utils                 // 常用工具类
-├── components           // 组件
-├── config
-│   └── index.js              // 配置文件
-├── layouts               // 布局
-├── middleware            // 中间件
-├── pages                 // 页面
-├── plugins               // 插件
-├── static                // 静态资源
-└── store                 //vuex状态树
+  ├── assets               // 静态资源
+  │   ├── images                // 图片资源
+  │   ├── services              // api请求
+  │   ├── styles                // 样式文件
+  │   └── utils                 // 常用工具类
+  ├── components           // 组件
+  ├── config
+  │   └── index.js              // 配置文件
+  ├── layouts               // 布局
+  ├── middleware            // 中间件
+  ├── pages                 // 页面
+  ├── plugins               // 插件
+  ├── static                // 静态资源
+  └── store                 //vuex状态树
 
 
 ## 部分截图展示
