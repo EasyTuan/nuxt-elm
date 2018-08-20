@@ -8,7 +8,7 @@
 
 ### 移动端扫描下方二维码
 
-<img src="./screenshots/ewm.png" width="250" height="250"/>
+<img src="./screenshots/qr-code.png" width="250" height="250"/>
 
 #技术栈
 
