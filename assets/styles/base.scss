@@ -9,3 +9,16 @@ input[disabled] {
   background: #fff;
   opacity: 1;
 }
+
+ul, li{
+  list-style: none;
+  padding: 0;
+}
+
+@media screen and (min-width: 500px){
+  body,.mint-tabbar,.mint-header {
+    max-width: 500px;
+    margin: 0 auto;
+    position: relative;
+  }
+}

@@ -9,7 +9,14 @@
     "dev": "nuxt",
     "build": "nuxt build && nuxt start",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "tep": "node template",
     "precommit": "npm run lint"
+  },
+  "config": {
+    "nuxt": {
+      "host": "0.0.0.0",
+      "port": 3000
+    }
   },
   "dependencies": {
     "axios": "^0.18.0",
@@ -18,6 +25,8 @@
     "postcss-loader": "^3.0.0"
   },
   "devDependencies": {
+    "@nuxtjs/axios": "^5.3.1",
+    "@nuxtjs/proxy": "^1.2.4",
     "babel-eslint": "^8.2.1",
     "eslint": "^4.15.0",
     "eslint-friendly-formatter": "^3.0.0",

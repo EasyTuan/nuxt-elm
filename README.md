@@ -2,13 +2,20 @@
 
 暂无
 
+# 效果演示
+
+[查看demo请戳这里](http://47.100.122.91:3000/)（请用chrome手机模式预览）
+
+### 移动端扫描下方二维码
+
+<img src="./screenshots/ewm.png" width="250" height="250"/>
+
 #技术栈
 
-vue2 + vuex + vue-router + nuxt + node + mysql
+vue2 + vuex + vue-router + mint-ui + nuxt + node + mysql
 
 
 ## 项目运行
-
 
 ```
 
@@ -19,6 +26,9 @@ cd nuxt-elm
 npm install
 
 npm run dev
+
+#模版快速生成
+npm run tep `文件名`
 
 ```
 

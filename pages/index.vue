@@ -1,24 +1,87 @@
 <template>
   <div class="home-page">
-    首页
+    <mt-header fixed title="静安区">
+      <mt-button @click="$router.push('/search')" icon="search" slot="right"></mt-button>
+    </mt-header>
+    <nav class="nav-container">
+      <div class="nav-item"  v-for="(item, index) in navList" :key="index">
+        <img :src="item.imgUrl" alt="">
+        {{item.text}}
+      </div>
+    </nav>
+    <div class="show-list">
+      <img src="~/assets/images/show1.png" alt="">
+      <img src="~/assets/images/show2.png" alt="">
+    </div>
+    <div style="height:20px;clear:both"></div>
+    <p class="shoplist-title">—— 推荐商家 ——</p>
+    <ShopList />
     <Tabbar page='0' />
   </div>
 </template>
 
 <script>
-import Tabbar from '~/components/tabbar';
+  import Tabbar from '~/components/tabbar';
+  import ShopList from '~/components/shopList';
+  import config from '~/config';
+  import { homeData } from '~/assets/services/common'
 
-export default {
-  components: {
-    Tabbar
+  export default {
+    components: {
+      Tabbar,
+      ShopList
+    },
+    data () {
+      return {
+        data:'静安区',
+        navList:[]
+      }
+    },
+    async asyncData() {
+      const res = await homeData();
+      res.map((item)=>{
+        item.imgUrl = config.IMG_URL+item.imgUrl;
+      })
+      return { navList: res }
+    }
   }
-}
 </script>
 
 <style lang="scss">
-@import '../assets/styles/mixin.scss';
-.home-page {
-  padding-bottom: 53px;
-}
+  @import '../assets/styles/mixin';
+
+  .home-page {
+    padding: 40px 0 53px 0;
+    .nav-container {
+      @include fj();
+      flex-wrap: wrap;
+      .nav-item {
+        @include wh(20%,80px);
+        text-align: center;
+        color: #666;
+        font-size: 12px;
+        img {
+          display: block;
+          margin: 0 auto;
+          @include wh(50px, 50px);
+        }
+      }
+    }
+    .shoplist-title {
+      @include fj(center);
+      font-size: 14px;
+    }
+    .show-list {
+      padding: 0 0.6rem;
+      img {
+        width: 49%;
+        height: auto;
+        float: left;
+        &:nth-last-of-type(1) {
+          float: right;
+        }
+      }
+    }
+  }
 </style>
 

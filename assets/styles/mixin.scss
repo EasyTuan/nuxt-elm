@@ -1,6 +1,6 @@
 //******颜色变量******/
 $primary:    #4aa5f0;
-$secondary:  #f8c13b;
+$secondary:  #fff100;
 $danger:     #d81e06;
 $blue:       #1070ff;
 $light:      #eee;
@@ -56,6 +56,11 @@ $dark:       #333;
 @mixin wh($width, $height){
 	width: $width;
 	height: $height;
+}
+
+//字体大小、行高、字体
+@mixin font($size, $line-height, $family: 'Microsoft YaHei') {
+	font: #{$size}/#{$line-height} $family;
 }
 
 //字体大小，颜色

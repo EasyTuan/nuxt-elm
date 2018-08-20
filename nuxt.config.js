@@ -1,6 +1,6 @@
 module.exports = {
   head: {
-    title: 'nuxt-elm',
+    title: '饿了么',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
@@ -15,6 +15,8 @@ module.exports = {
   },
 
   loading: { color: '#3B8070' },
+
+  cache: true,
 
   build: {
     filenames: {
@@ -34,6 +36,20 @@ module.exports = {
       }
     }
   },
+
+  modules: [
+      '@nuxtjs/axios',
+      '@nuxtjs/proxy'
+  ],
+  proxy: [
+    [
+      '/api',{
+        target: 'http://47.100.122.91:9000',
+        changeOrigin: true,
+        pathRewrite: { '^/api' : '/' }
+      }
+    ]
+  ],
 
   plugins: [
     { src: '~plugins/mint-ui' },
