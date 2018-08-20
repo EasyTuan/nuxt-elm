@@ -7,7 +7,7 @@
         </svg>
       </svg>
     </section>
-    <div :style="'width:' + rating*2/5*1.5 + 'rem'" class="star_overflow">
+    <div :style="'width:' + rating*2/5 + 'rem'" class="star_overflow">
       <section class="star_container" >
         <svg class="orange_fill" v-for="num in 5" :key="num">
           <svg id="star" viewBox="0 0 32 32" width="100%" height="100%">
@@ -29,8 +29,8 @@
   @import "../assets/styles/mixin";
 	.rating_container{
     position: relative;
-    top: .2rem;
-    @include wh(3rem, .6rem);
+    top: .1rem;
+    @include wh(2rem, .4rem);
     .star_overflow{
       overflow: hidden;
       position: relative;
@@ -39,10 +39,10 @@
     .star_container{
       position: absolute;
       display: flex;
-      width: 3rem;
-      height: 0.6rem;
-      top: -0.03rem;
-      left: -0.03rem;
+      width: 2rem;
+      height: 0.4rem;
+      top: -0.02rem;
+      left: -0.02rem;
       .grey_fill{
         fill: #d1d1d1;
       }

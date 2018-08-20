@@ -158,16 +158,15 @@ export default {
 	@import '../assets/styles/mixin';
 	.shoplist_container{
 		background-color: #fff;
-    margin-bottom: 2rem;
-    margin-top: 20px;
+		margin-bottom: 2rem;
 	}
 	.shop_li{
 		display: flex;
-		border-top: 0.025rem solid #f1f1f1;
-		padding: 0.7rem 0.6rem;
+		border-bottom: 0.025rem solid #f1f1f1;
+		padding: 0.7rem 0.4rem;
 	}
 	.shop_img{
-		@include wh(60px, 60px);
+		@include wh(2.7rem, 2.7rem);
 		display: block;
 		margin-right: 0.4rem;
 	}
@@ -183,19 +182,20 @@ export default {
 			@include fj;
 			align-items: center;
 			.shop_title{
+				width: 8.5rem;
 				color: #333;
-        padding-top: .01rem;
-        font-size: 14px;
+				padding-top: .01rem;
+				@include font(0.65rem, 0.65rem, 'PingFangSC-Regular');
 				font-weight: 700;
 			}
 			.premium::before{
 				content: '品牌';
 				display: inline-block;
-        font-size: 10px;
+				font-size: 0.5rem;
 				line-height: .6rem;
-				color: #69411e;
-				background-color: $secondary;
-				padding: 3px 5px;
+				color: #333;
+				background-color: #ffd930;
+				padding: 0 0.1rem;
 				border-radius: 0.1rem;
 				margin-right: 0.2rem;
 			}

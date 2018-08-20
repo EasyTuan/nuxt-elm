@@ -6,6 +6,10 @@ $blue:       #1070ff;
 $light:      #eee;
 $dark:       #333;
 
+@function px2rem($px, $base-font-size: 75px) {
+  @return ($px / $base-font-size) * 1rem;
+}
+
 // 背景图片地址和大小
 @mixin bg($url) {
 	background-image: url($url);

@@ -12,6 +12,9 @@ module.exports = {
     link: [
       { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
     ],
+    script: [
+      { src: 'http://g.tbcdn.cn/mtb/lib-flexible/0.2.3/??flexible_css.js,flexible.js' },
+    ],
   },
 
   loading: { color: '#3B8070' },

@@ -69,10 +69,10 @@
     }
     .shoplist-title {
       @include fj(center);
-      font-size: 14px;
+      font-size: 16px;
     }
     .show-list {
-      padding: 0 0.6rem;
+      padding: 0 0.4rem;
       img {
         width: 49%;
         height: auto;
