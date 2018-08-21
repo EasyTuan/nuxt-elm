@@ -158,7 +158,6 @@ export default {
 	@import '../assets/styles/mixin';
 	.shoplist_container{
 		background-color: #fff;
-		margin-bottom: 2rem;
 	}
 	.shop_li{
 		display: flex;

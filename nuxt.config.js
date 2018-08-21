@@ -3,14 +3,14 @@ module.exports = {
     title: '饿了么',
     meta: [
       { charset: 'utf-8' },
-      { name: 'viewport', content: 'width=device-width, initial-scale=1' },
+      { name: 'viewport', content: 'width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0' },
       { hid: 'description', name: 'description', content: 'Nuxt.js project' },
       { name: 'format-detection', content: 'telephone=no' },
       { name: 'msapplication-tap-highlight', content: 'no' },
       { name: 'apple-mobile-web-app-capable', content: 'yes' },
     ],
     link: [
-      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+      { rel: 'SHORTCUT ICON', type: 'image/x-icon', href: '/favicon.ico' }
     ],
     script: [
       { src: 'http://g.tbcdn.cn/mtb/lib-flexible/0.2.3/??flexible_css.js,flexible.js' },

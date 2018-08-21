@@ -51,15 +51,18 @@
   @import '../assets/styles/mixin';
 
   .home-page {
-    padding: 40px 0 53px 0;
+    background-color: #fff;
+    padding: px2rem(88px) 0 53px 0;
     .nav-container {
       @include fj();
       flex-wrap: wrap;
+      margin-bottom: px2rem(30px);
       .nav-item {
         @include wh(20%,80px);
         text-align: center;
         color: #666;
-        font-size: 12px;
+        font-size: px2rem(24px);
+        padding-top: px2rem(10px);
         img {
           display: block;
           margin: 0 auto;
@@ -69,7 +72,8 @@
     }
     .shoplist-title {
       @include fj(center);
-      font-size: 16px;
+      font-size: px2rem(30px);
+      margin-bottom: px2rem(20px);
     }
     .show-list {
       padding: 0 0.4rem;

@@ -15,10 +15,32 @@ ul, li{
   padding: 0;
 }
 
+a:link, a:visited, a:hover, a:active {
+  text-decoration: none;
+}
+
 @media screen and (min-width: 500px){
   body,.mint-tabbar,.mint-header {
     max-width: 500px;
     margin: 0 auto;
     position: relative;
   }
+}
+
+.mint-header {
+  height: px2rem(88px);
+  font-size: px2rem(36px);
+  .mintui {
+    font-size: px2rem(36px);
+  }
+}
+
+body,html {
+  @include wh(100%, 100%);
+  background-color: $fill-base;
+}
+
+img {
+  display: block;
+  max-width: 100%;
 }

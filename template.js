@@ -32,7 +32,7 @@ const indexTep = `<template>
   @import '../assets/styles/mixin';
 
   .${dirName}-page {
-    padding: 40px 0 0 0;
+    padding: px2rem(88px) 0 0 0;
   }
 </style>
 `;

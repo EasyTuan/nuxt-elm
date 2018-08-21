@@ -1,7 +1,9 @@
 <template>
   <div class="discover-page">
     <mt-header fixed title="发现"></mt-header>
-    发现
+    <img src="~/assets/images/discover/discover1.png" alt="">
+    <div style="height:12px;"></div>
+    <img src="~/assets/images/discover/discover2.png" alt="">
     <Tabbar page='1' />
   </div>
 </template>
@@ -23,7 +25,7 @@
   @import '../assets/styles/mixin';
 
   .discover-page {
-    padding: 40px 0 53px 0;
+    padding: px2rem(88px) 0 53px 0;
   }
 </style>
 
