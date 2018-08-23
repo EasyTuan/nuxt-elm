@@ -10,9 +10,9 @@
 
 <img src="./screenshots/qr-code.png" width="250" height="250"/>
 
-#技术栈
+# 技术栈
 
-vue2 + vuex + vue-router + mint-ui + nuxt + node + mysql
+vue2 + vuex + vue-router + mint-ui + nuxt
 
 
 ## 项目运行
@@ -31,6 +31,13 @@ npm run dev
 npm run tep `文件名`
 
 ```
+
+## 补充
+
+此项目有配套的后台系统，如果想体验前后台同时开发，可以下载对应的后台系统：[后台项目传送地址](https://github.com/EasyTuan/node-elm-api)。
+
+如果只做前端开发，请忽略这句话。
+
 
 ### 1.2 开发过程
 
