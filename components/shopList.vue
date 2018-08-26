@@ -81,11 +81,11 @@ export default {
 		async initData(){
 			//获取数据
       let res = await restaurants();
-      res.map((item)=>{
+      res.data.map((item)=>{
         item.image_path = config.IMG_URL+item.image_path;
       })
-			this.shopListArr = [...res];
-			if (res.length < 20) {
+			this.shopListArr = [...res.data];
+			if (res.data.length < 20) {
 				this.touchend = true;
 			}
 		},

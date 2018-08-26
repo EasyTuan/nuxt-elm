@@ -38,6 +38,9 @@ export default async (options) => {
         res.data,
       );
     }
+    if(res.data.code !== 0) {
+      Toast(res.data.msg);
+    }
     return res.data;
   }
   Toast(res.statusText);

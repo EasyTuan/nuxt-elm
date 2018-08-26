@@ -27,7 +27,7 @@ module.exports = {
       vendor: `vendor.[hash]${new Date().getTime()}.js`,
       app: `app.[chunkhash]${new Date().getTime()}.js`
     },
-    vendor: ['axios', 'mint-ui'],
+    vendor: ['axios', 'mint-ui', 'js-cookie'],
     extend (config, { isDev, isClient }) {
       if (isDev && isClient) {
         config.module.rules.push({
@@ -41,13 +41,14 @@ module.exports = {
   },
 
   modules: [
-      '@nuxtjs/axios',
-      '@nuxtjs/proxy'
+    '@nuxtjs/axios',
+    '@nuxtjs/proxy'
   ],
   proxy: [
     [
       '/api',{
-        target: 'http://47.100.122.91:9000',
+        target: 'http://localhost:9000',
+        // target: 'http://47.100.122.91:9000',
         changeOrigin: true,
         pathRewrite: { '^/api' : '/' }
       }

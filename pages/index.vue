@@ -24,7 +24,7 @@
   import Tabbar from '~/components/tabbar';
   import ShopList from '~/components/shopList';
   import config from '~/config';
-  import { homeData } from '~/assets/services/common'
+  import { getHomeData } from '~/assets/services/common'
 
   export default {
     components: {
@@ -38,11 +38,11 @@
       }
     },
     async asyncData() {
-      const res = await homeData();
-      res.map((item)=>{
+      const res = await getHomeData();
+      res.data.map((item)=>{
         item.imgUrl = config.IMG_URL+item.imgUrl;
       })
-      return { navList: res }
+      return { navList: res.data }
     }
   }
 </script>

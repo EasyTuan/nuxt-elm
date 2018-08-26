@@ -7,7 +7,7 @@
   "license": "GPL",
   "scripts": {
     "dev": "nuxt",
-    "build": "nuxt build && nuxt start",
+    "start": "nuxt build && nuxt start",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "tep": "node template",
     "precommit": "npm run lint"
@@ -20,6 +20,8 @@
   },
   "dependencies": {
     "axios": "^0.18.0",
+    "js-cookie": "^2.2.0",
+    "js-md5": "^0.7.3",
     "mint-ui": "^2.2.13",
     "nuxt": "^1.0.0",
     "postcss-loader": "^3.0.0"

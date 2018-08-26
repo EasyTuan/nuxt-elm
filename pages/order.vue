@@ -3,8 +3,9 @@
     <mt-header fixed title="订单"></mt-header>
     <div class="no-data">
       <img class="nodata" src="~/assets/images/nodata.png" alt="">
-      <p>登陆后查看外卖订单</p>
-      <button class="login" @click="$router.push('/login')">立即登录</button>
+      <p v-if="!userInfo||!userInfo.user_id">登陆后查看外卖订单</p>
+      <p v-if="userInfo&&userInfo.user_id">暂无订单信息</p>
+      <button v-if="!userInfo||!userInfo.user_id" class="login" @click="$router.push('/login')">立即登录</button>
     </div>
     <Tabbar page='2' />
   </div>
@@ -12,6 +13,7 @@
 
 <script>
   import Tabbar from '~/components/tabbar';
+  import { mapGetters } from 'vuex';
 
   export default {
     components: {
@@ -19,7 +21,12 @@
     },
     head: {
       title: '订单'
-    }
+    },
+    computed: {
+			...mapGetters([
+        'userInfo',
+			])
+    },
   }
 </script>
 

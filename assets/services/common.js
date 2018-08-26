@@ -2,9 +2,9 @@ import request from '../utils/request';
 
 const prefix = '/common';
 
-export const homeData = (params)=> {
+export const getHomeData = (params)=> {
   return request({
-    url: `${prefix}/homeData`,
+    url: `${prefix}/getHomeData`,
     method: 'GET',
     data: params,
   })
