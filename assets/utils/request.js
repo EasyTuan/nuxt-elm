@@ -3,7 +3,45 @@ import config from '~/config';
 import { Toast } from 'mint-ui';
 
 
-const request = (options = { method: 'GET' }) => {
+axios.defaults.baseURL = config.BASE_URL;
+axios.defaults.timeout = config.TIMEOUT;
+axios.defaults.headers = config.HEADERS;
+
+// 请求拦截器
+axios.interceptors.request.use( request => {
+  if (!config.IS_RELEASE) {
+    console.log(
+      `${new Date().toLocaleString()}【 M=${request.url} 】P=`,
+      request.params || request.data,
+    );
+  }
+  return request;
+}, error => {
+  return Promise.reject(error);
+});
+
+// 响应拦截器
+axios.interceptors.response.use( res => {
+  if (res.status >= 200 && res.status < 300) {
+    if (!config.IS_RELEASE) {
+      console.log(
+        `${new Date().toLocaleString()}【接口响应：】`,
+        res.data,
+      );
+    }
+    // 浏览器环境弹出报错信息
+    if(typeof window !=="undefined" && res.data.code !== 0) {
+      Toast(res.data.msg);
+    }
+    return res.data;
+  }else {
+    throw new Error(res.statusText);
+  }
+}, error => {
+  return Promise.reject(error);
+});
+
+export default (options = { method: 'GET' }) => {
   let isdata = true;
   if (
     options.method.toUpperCase() !== 'POST'
@@ -12,37 +50,10 @@ const request = (options = { method: 'GET' }) => {
   ) {
     isdata = false;
   }
-  if (!config.IS_RELEASE) {
-    console.log(
-      `${new Date().toLocaleString()}【M=${options.url}】P=`,
-      options.data || null,
-    );
-  }
   return axios({
     method: options.method,
-    baseURL: config.BASE_URL,
     url: options.url,
     data: isdata ? options.data : null,
     params: !isdata ? options.data : null,
-    timeout: config.TIMEOUT,
-    headers: config.HEADERS,
   });
-};
-
-export default async (options) => {
-  const res = await request(options);
-  if (res.status >= 200 && res.status < 300) {
-    if (!config.IS_RELEASE) {
-      console.log(
-        `${new Date().toLocaleString()}【M=${options.url}】【接口响应：】`,
-        res.data,
-      );
-    }
-    if(res.data.code !== 0) {
-      Toast(res.data.msg);
-    }
-    return res.data;
-  }
-  Toast(res.statusText);
-  throw new Error(res.statusText);
 };

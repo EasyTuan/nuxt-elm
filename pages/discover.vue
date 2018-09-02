@@ -1,9 +1,9 @@
 <template>
   <div class="discover-page">
     <mt-header fixed title="发现"></mt-header>
-    <img src="~/assets/images/discover/discover1.png" alt="">
+    <img src="~/assets/images/discover/discover1.jpg" alt="">
     <div style="height:12px;"></div>
-    <img src="~/assets/images/discover/discover2.png" alt="">
+    <img src="~/assets/images/discover/discover2.jpg" alt="">
     <Tabbar page='1' />
   </div>
 </template>

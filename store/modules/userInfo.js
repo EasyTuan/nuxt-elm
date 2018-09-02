@@ -5,6 +5,7 @@ import cookies from "js-cookie";
 import {
   LOGIN,
   OUT_LOGIN,
+  USER_INFO_UPDATA
 } from '../types.js';
 
 const state = {
@@ -24,6 +25,9 @@ const actions = {
   outLogin({ commit }) {
     commit(OUT_LOGIN);
   },
+  update({ commit }, value) {
+    commit(USER_INFO_UPDATA,value);
+  }
 }
 
 const mutations = {
@@ -40,6 +44,10 @@ const mutations = {
   [OUT_LOGIN](state) {
     cookies.remove('userInfo');
     state.userInfo = {};
+  },
+  [USER_INFO_UPDATA](state,value) {
+    state.userInfo = Object.assign(state.userInfo,value);
+    cookies.set('userInfo',state.userInfo);
   },
 }
 

@@ -25,9 +25,11 @@ const store = () => new Vuex.Store({
           cookieObj[key] = value
         }
 
-        const userInfo = JSON.parse(decodeURIComponent(cookieObj.userInfo));
-        if(userInfo) {
-          commit(LOGIN, userInfo)
+        if(cookieObj.userInfo) {
+          const userInfo = JSON.parse(decodeURIComponent(cookieObj.userInfo));
+          if(userInfo) {
+            commit(LOGIN, userInfo)
+          }
         }
       }
     },

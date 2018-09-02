@@ -1,8 +1,18 @@
 <template>
   <div>
     <nuxt/>
+    <svg-icon />
   </div>
 </template>
+
+<script>
+	import svgIcon from '../components/svg';
+  	export default {
+    	components:{
+        svgIcon
+      }
+  	}
+</script>
 
 <style>
 html {
