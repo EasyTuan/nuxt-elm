@@ -1,49 +1,49 @@
 <template>
 	<div class="shoplist_container">
 		<ul v-if="shopListArr.length" type="1">
-			<router-link :to="{path: 'shop', query:{geohash, id: item.id}}" v-for="item in shopListArr" tag='li' :key="item.id" class="shop_li">
-				<section>
-					<img :src="item.image_path" class="shop_img">
-				</section>
-				<hgroup class="shop_right">
-					<header class="shop_detail_header">
-						<h4 :class="item.is_premium? 'premium': ''" class="shop_title ellipsis">{{item.name}}</h4>
-						<ul class="shop_detail_ul">
-							<li v-for="item in item.supports" :key="item.id" class="supports">{{item.icon_name}}</li>
-						</ul>
-					</header>
-					<h5 class="rating_order_num">
-						<section class="rating_order_num_left">
-							<section class="rating_section">
-								<rating-star :rating='item.rating'></rating-star>
-								<span class="rating_num">{{item.rating}}</span>
-							</section>
-							<section class="order_section">
-								月售{{item.recent_order_num}}单
-							</section>
-						</section>
-						<section class="rating_order_num_right">
-							<span class="delivery_style delivery_left" v-if="item.delivery_mode">{{item.delivery_mode.text}}</span>
-							<span class="delivery_style delivery_right" v-if="zhunshi(item.supports)">准时达</span>
-						</section>
-					</h5>
-					<h5 class="fee_distance">
-						<p class="fee">
-							¥{{item.float_minimum_order_amount}}起送
-							<span class="segmentation">/</span>
-							{{item.piecewise_agent_fee.tips}}
-						</p>
-						<p class="distance_time">
-							<span v-if="Number(item.distance)">{{item.distance > 1000? (item.distance/1000).toFixed(2) + 'km': item.distance + 'm'}}
-								<span class="segmentation">/</span>
-							</span>
-							<span v-else>{{item.distance}}</span>
-							<span class="segmentation">/</span>
-							<span class="order_time">{{item.order_lead_time}}</span>
-						</p>
-					</h5>
-				</hgroup>
-			</router-link>
+			<li v-for="item in shopListArr" @click="goDetail()" :key="item.id" class="shop_li">
+        <section>
+          <img :src="item.image_path" class="shop_img">
+        </section>
+        <hgroup class="shop_right">
+          <header class="shop_detail_header">
+            <h4 :class="item.is_premium? 'premium': ''" class="shop_title ellipsis">{{item.name}}</h4>
+            <ul class="shop_detail_ul">
+              <li v-for="item in item.supports" :key="item.id" class="supports">{{item.icon_name}}</li>
+            </ul>
+          </header>
+          <h5 class="rating_order_num">
+            <section class="rating_order_num_left">
+              <section class="rating_section">
+                <rating-star :rating='item.rating'></rating-star>
+                <span class="rating_num">{{item.rating}}</span>
+              </section>
+              <section class="order_section">
+                月售{{item.recent_order_num}}单
+              </section>
+            </section>
+            <section class="rating_order_num_right">
+              <span class="delivery_style delivery_left" v-if="item.delivery_mode">{{item.delivery_mode.text}}</span>
+              <span class="delivery_style delivery_right" v-if="zhunshi(item.supports)">准时达</span>
+            </section>
+          </h5>
+          <h5 class="fee_distance">
+            <p class="fee">
+              ¥{{item.float_minimum_order_amount}}起送
+              <span class="segmentation">/</span>
+              {{item.piecewise_agent_fee.tips}}
+            </p>
+            <p class="distance_time">
+              <span v-if="Number(item.distance)">{{item.distance > 1000? (item.distance/1000).toFixed(2) + 'km': item.distance + 'm'}}
+                <span class="segmentation">/</span>
+              </span>
+              <span v-else>{{item.distance}}</span>
+              <span class="segmentation">/</span>
+              <span class="order_time">{{item.order_lead_time}}</span>
+            </p>
+          </h5>
+        </hgroup>
+			</li>
 		</ul>
 		<p v-if="touchend" class="empty_data">没有更多了</p>
 		<aside class="return_top" @click="backTop" v-if="showBackStatus">
@@ -88,7 +88,10 @@ export default {
 			if (res.data.length < 20) {
 				this.touchend = true;
 			}
-		},
+    },
+    goDetail() {
+      window.location.href = 'https://h5.ele.me/shop/#geohash=wtw3yf4pzzt56w1dw3jc4r&id=161379736&s_type=1&rank_id=094452dbc01d4748b8eb6a5bf0035aa8';
+    },
 		//到达底部加载更多数据
 		async loaderMore(){
 			if (this.touchend) {

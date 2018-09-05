@@ -10,8 +10,12 @@
       </div>
     </nav>
     <div class="show-list">
-      <img src="~/assets/images/show1.png" alt="">
-      <img src="~/assets/images/show2.png" alt="">
+      <a href="https://h5.ele.me/ranking/#type=quality_meal&activity_id=1&title=%E5%93%81%E8%B4%A8%E5%A5%97%E9%A4%90&navType=0&geohash=wtw3ycy6v7pe">
+        <img src="~/assets/images/show1.png" alt="">
+      </a>
+      <a href="https://h5.ele.me/sales/#geohash=wtw3ycy6v7pe">
+        <img src="~/assets/images/show2.png" alt="">
+      </a>
     </div>
     <div style="height:20px;clear:both"></div>
     <p class="shoplist-title">—— 推荐商家 ——</p>
@@ -77,7 +81,8 @@
     }
     .show-list {
       padding: 0 0.4rem;
-      img {
+      a {
+        display: inline-block;
         width: 49%;
         height: auto;
         float: left;
