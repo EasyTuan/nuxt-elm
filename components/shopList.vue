@@ -1,7 +1,12 @@
 <template>
 	<div class="shoplist_container">
 		<ul v-if="shopListArr.length" type="1">
-			<li v-for="item in shopListArr" @click="goDetail()" :key="item.id" class="shop_li">
+			<router-link
+        :to="{ path: 'shop', query:{geohash, id: item.id }}"
+        v-for="item in shopListArr"
+        :key="item.id"
+        class="shop_li"
+      >
         <section>
           <img :src="item.image_path" class="shop_img">
         </section>
@@ -43,7 +48,7 @@
             </p>
           </h5>
         </hgroup>
-			</li>
+			</router-link>
 		</ul>
 		<p v-if="touchend" class="empty_data">没有更多了</p>
 		<aside class="return_top" @click="backTop" v-if="showBackStatus">
@@ -88,9 +93,6 @@ export default {
 			if (res.data.length < 20) {
 				this.touchend = true;
 			}
-    },
-    goDetail() {
-      window.location.href = 'https://h5.ele.me/shop/#geohash=wtw3yf4pzzt56w1dw3jc4r&id=161379736&s_type=1&rank_id=094452dbc01d4748b8eb6a5bf0035aa8';
     },
 		//到达底部加载更多数据
 		async loaderMore(){
