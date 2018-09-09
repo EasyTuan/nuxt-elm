@@ -2,7 +2,7 @@
 
 高仿饿了么，以nuxt作为vue的服务端渲染，适合刚接触或者准备上vue ssr的同学参考和学习
 
-如遇网络不佳，请移步[国内镜像加速节点](https://gitee.com/easytuan/node-elm-api)
+如遇网络不佳，请移步[国内镜像加速节点](https://gitee.com/easytuan/nuxt-elm)
 
 # 效果演示
 
