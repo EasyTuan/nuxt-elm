@@ -32,10 +32,10 @@
                 <span class="info-data-top"><b>0.00</b>元</span>
                 <span class="info-data-bottom">钱包</span>
               </li>
-              <li class="info-data-link">
+              <router-link :to="userInfo&&userInfo.user_id? '/user/benefit' : '/login'" class="info-data-link">
                 <span class="info-data-top"><b>0</b>个</span>
                 <span class="info-data-bottom">红包</span>
-              </li>
+              </router-link>
               <li class="info-data-link">
                 <span class="info-data-top"><b>0</b>个</span>
                 <span class="info-data-bottom">金币</span>

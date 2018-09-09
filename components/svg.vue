@@ -115,6 +115,7 @@
 			<symbol viewBox="0 0 126 126" id="mobile"><svg viewBox="0 0 11 16" id="mobile" width="100%" height="100%"><path fill="#0097FF" fill-rule="evenodd" d="M1 0h9a1 1 0 0 1 1 1v14a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V1a1 1 0 0 1 1-1zm.5 1a.5.5 0 0 0-.5.5v10a.5.5 0 0 0 .5.5h8a.5.5 0 0 0 .5-.5v-10a.5.5 0 0 0-.5-.5h-8zm4 14a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"></path></svg></symbol>
 			<symbol viewBox="0 0 126 126" id="cart-minus"><svg viewBox="0 0 44 44" id="cart-minus" width="100%" height="100%"><path fill="none" d="M0 0h44v44H0z"></path><path fill-rule="evenodd" d="M22 0C9.8 0 0 9.8 0 22s9.8 22 22 22 22-9.8 22-22S34.2 0 22 0zm10 24h-8v8c0 1.1-.9 2-2 2s-2-.9-2-2v-8h-8c-1.1 0-2-.9-2-2s.9-2 2-2h8v-8c0-1.1.9-2 2-2s2 .9 2 2v8h8c1.1 0 2 .9 2 2s-.9 2-2 2z" clip-rule="evenodd"></path></svg></symbol>
 			<symbol viewBox="0 0 126 126" id="cart-add"><svg viewBox="0 0 44 44" id="cart-add" width="100%" height="100%"><path fill-rule="evenodd" d="M22 0C9.8 0 0 9.8 0 22s9.8 22 22 22 22-9.8 22-22S34.2 0 22 0zm10 24h-8v8c0 1.1-.9 2-2 2s-2-.9-2-2v-8h-8c-1.1 0-2-.9-2-2s.9-2 2-2h8v-8c0-1.1.9-2 2-2s2 .9 2 2v8h8c1.1 0 2 .9 2 2s-.9 2-2 2z" clip-rule="evenodd"></path></svg></symbol>
+			<symbol viewBox="0 0 126 126" id="select"><svg viewBox="0 0 20 20" id="select" width="100%" height="100%"><path d="M17.595 3.494A9.978 9.978 0 0 0 10 0C4.477 0 0 4.477 0 10s4.477 10 10 10 10-4.477 10-10c0-1.631-.39-3.171-1.083-4.532l-9.973 9.608-4.715-4.714 1.653-1.653 3.062 3.062 8.65-8.277z"></path></svg></symbol>
 		</defs>
 	</svg>
 </template>

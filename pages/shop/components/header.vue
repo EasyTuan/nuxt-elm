@@ -1,17 +1,17 @@
 <template>
   <div class="shop-header">
     <div class="head">
-      <nav style="background-image: url(//fuss10.elemecdn.com/6/25/36b82a63fb57a99fb8665c9cd26f9png.png?imageMogr/format/webp/thumbnail/750x/);">
+      <nav :style="`background-image: url('${banner}');`">
         <i @click="$router.go(-1);" class="mintui mintui-back"></i>
-        <img class="shop-logo" src="//fuss10.elemecdn.com/7/48/0620c527031e3b0883c6e0370604epng.png?imageMogr/format/webp/thumbnail/150x/">
+        <img class="shop-logo" :src="seller.avatar">
       </nav>
     </div>
     <div class="content">
-      <h2>华莱士炸鸡汉堡（金港店）</h2>
+      <h2>{{seller.name}}</h2>
       <div class="info">
-        <span>评价4.7</span>
-        <span>月售3849单</span>
-        <span>蜂鸟快送约33分钟</span>
+        <span>评价{{seller.score}}</span>
+        <span>月售{{seller.sellCount}}单</span>
+        <span>蜂鸟快送约{{seller.deliveryTime}}分钟</span>
       </div>
     </div>
     <div class="foot">
@@ -25,7 +25,19 @@
 </template>
 
 <script>
-export default {};
+import config from '~/config';
+export default {
+  props: {
+    seller: {
+      default: {},
+    }
+  },
+  computed: {
+    banner:function() {
+      return config.IMG_URL + this.seller.banner;
+    }
+  }
+};
 </script>
 
 <style lang="scss">
@@ -56,7 +68,7 @@ export default {};
     }
   }
   .content {
-    font-size: px2rem(12px);
+    font-size: px2rem(24px);
     margin-top: px2rem(50px);
     text-align: center;
     h2 {
@@ -72,7 +84,7 @@ export default {};
   .foot {
     padding: 0 px2rem(70px);
     margin-top: 10px;
-    font-size: px2rem(12px);
+    font-size: px2rem(24px);
     .mint-badge {
       transform: scale(0.8) translateX(-10%);
       border-radius: 1px;

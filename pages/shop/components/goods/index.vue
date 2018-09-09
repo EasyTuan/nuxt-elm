@@ -45,14 +45,19 @@ import cartcontrol from "./cartcontrol";
 import * as shoppingApi from "~/assets/services/shopping";
 
 export default {
+  props: {
+    seller: {
+      default: {},
+    }
+  },
   data() {
     return {
       goods: [],
       listHeight: [],
       scrollY: 0,
-      seller: {},
       classMap: ["decrease", "discount", "special", "invoice", "guarantee"],
       currentIndex: 0,
+      isScroll: false,
     };
   },
   computed: {
@@ -69,24 +74,21 @@ export default {
     }
   },
   created() {
+
+  },
+  mounted () {
     shoppingApi.goods().then(res => {
       if (res.code === 0) {
         this.goods = res.data;
       }
     });
-  },
-  mounted () {
-    shoppingApi.seller().then((res) => {
-      if(res.code === 0){
-        this.seller = res.data;
-      }
-    })
 
     //菜品滚动选择类目
     document.querySelector('.foods-wrapper').addEventListener('scroll', this.throttle(() => {
-      // if(document.querySelector('.foods-wrapper').getBoundingClientRect().top !== 0) {
-      //   document.body.scrollTop = document.documentElement.scrollTop = document.querySelector('.foods-wrapper').getBoundingClientRect().top;
-      // }
+      // 防止手动选择的时候误操作
+      if(this.isScroll) {
+        return;
+      }
       this.goods.map((item, index) => {
         const rect_top = document.querySelector('#a'+index).getBoundingClientRect().top;
         const container_top = document.querySelector('.foods-wrapper').getBoundingClientRect().top;
@@ -107,20 +109,22 @@ export default {
     },
     // 平滑滚动方法
     animateScroll(element, container, speed) {
+      this.isScroll = true;
       let rect = document.querySelector(element).getBoundingClientRect().top - document.querySelector(container).getBoundingClientRect().top;
       //获取元素相对窗口的top值，此处应加上窗口本身的偏移
       let top= rect + document.querySelector(container).scrollTop;
       let currentTop = 0;
       let requestId;
       //采用requestAnimationFrame，平滑动画
-      function step(timestamp) {
+      const step = (timestamp) => {
         if (currentTop <= top) {
           document.querySelector(container).scrollTo(0,currentTop);
           requestId=window.requestAnimationFrame(step);
         } else {
           window.cancelAnimationFrame(requestId);
+          this.isScroll = false;
         }
-        currentTop+=speed;
+        currentTop += speed;
       }
       window.requestAnimationFrame(step);
     },
@@ -144,7 +148,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../../../assets/styles/mixin';
+@import '../../../../assets/styles/mixin';
 .goods-page {
   display: flex;
   background: #fff;
@@ -152,6 +156,10 @@ export default {
   .menu-wrapper {
     flex: 0 0 80px;
     width: 80px;
+    height: calc( 100vh - 38px);
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     background: #f8f8f8;
     .menu-item {
       display: table;
@@ -211,6 +219,7 @@ export default {
   .foods-wrapper {
     width: calc( 100vw - 80px);
     height: calc( 100vh - 38px);
+    overflow-x: hidden;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     padding-bottom: 60px;

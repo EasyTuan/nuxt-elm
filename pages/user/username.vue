@@ -8,7 +8,7 @@
     <div style="height: 10px;"></div>
     <mt-field placeholder="请输入用户名" v-model="username"></mt-field>
     <section class="setname">
-      <p class="unlikep">用户名长度在5到24位之间</p>
+      <p class="unlikep">用户名长度在2到24位之间</p>
       <button class="submit" @click="submit()">确认修改</button>
     </section>
   </div>
@@ -37,7 +37,7 @@
           Toast('请输入用户名');
           return;
         }
-        if(this.username.length<5 || this.username.length>24) {
+        if(this.username.length<2 || this.username.length>24) {
           Toast('用户名长度不合法');
           return;
         }

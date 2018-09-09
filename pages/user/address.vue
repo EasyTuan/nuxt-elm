@@ -5,7 +5,10 @@
         <mt-button icon="back"></mt-button>
       </div>
     </mt-header>
-    反正又下了单，要地址做啥
+    <div class="add-address">
+      <img src="~/assets/images/add.png" alt="">
+      新增收货地址
+    </div>
   </div>
 </template>
 
@@ -21,8 +24,23 @@
   @import '../../assets/styles/mixin';
 
   .address-page {
-    padding: px2rem(188px) 0 0 0;
-    font-size: px2rem(30px);
-    text-align: center;
+    padding: px2rem(88px) 0 0 0;
+    .add-address {
+      width: 100%;
+      height: px2rem(100px);
+      line-height: px2rem(100px);
+      background: #fff;
+      position: fixed;
+      bottom: 0;
+      @include fj(center);
+      align-items: center;
+      font-size: px2rem(32px);
+      color: #3190e8;
+      img {
+        width: px2rem(40px);
+        height: px2rem(40px);
+        margin-right: 5px;
+      }
+    }
   }
 </style>

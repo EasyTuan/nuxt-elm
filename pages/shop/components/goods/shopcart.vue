@@ -55,7 +55,6 @@
 </template>
 
 <script>
-import BScroll from "better-scroll";
 import cartcontrol from "./cartcontrol";
 
 export default {
@@ -134,22 +133,9 @@ export default {
     },
     listShow() {
       if (!this.totalCount) {
-        // this.fold = true;
         return false;
       }
-      let show = !this.fold;
-      if (show) {
-        this.$nextTick(() => {
-          if (!this.scroll) {
-            // this.scroll = new BScroll(this.$refs.listContent, {
-            //   click: true
-            // });
-          } else {
-            this.scroll.refresh();
-          }
-        });
-      }
-      return show;
+      return !this.fold;
     }
   },
 

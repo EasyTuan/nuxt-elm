@@ -10,7 +10,7 @@
     <mt-field placeholder="验证码" v-model="captcha"></mt-field>
     <mt-field placeholder="密码" type="password" v-model="password"></mt-field>
     <p class="toast">
-      温馨提示：未注册的手机号，登录时将自动注册，且初始密码为123456
+      温馨提示：未注册的手机号，登录时将自动注册。
     </p>
     <button class="login" @click="Login()">立即登录</button>
   </div>
@@ -31,7 +31,7 @@
       return {
         mobile:'',
         captcha:'',
-        password:'123456',
+        password:'',
       }
     },
     methods: {
