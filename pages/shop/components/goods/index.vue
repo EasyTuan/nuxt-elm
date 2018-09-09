@@ -278,6 +278,7 @@ export default {
         .desc {
           margin-bottom: 8px;
           line-height: 12px;
+          max-width: px2rem(350px);
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap;

@@ -4,7 +4,7 @@ const port = json.config.nuxt.port;
 module.exports = {
   IS_RELEASE: false, // true线上，false测试
 
-  BASE_URL: `http://192.168.0.111:${port}/api`, //测试
+  BASE_URL: `http://localhost:${port}/api`, //测试
 
   // BASE_URL: `http://47.100.122.91:${port}/api`, //生产
 
