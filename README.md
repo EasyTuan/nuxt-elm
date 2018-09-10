@@ -84,7 +84,6 @@ npm run build
     ├── static               // 静态资源
     └── store                //vuex状态树
 
-
 ## 部分截图展示
 
 ### 首页展示
