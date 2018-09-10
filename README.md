@@ -64,6 +64,7 @@ npm run build
 - [x] 修改密码 -- 完成
 - [x] 个人中心 -- 完成
 - [x] 红包 -- 完成
+- [x] 收货地址 -- 完成
 
 # 业务介绍
 
@@ -122,7 +123,7 @@ npm run build
 
 # 友情链接
 
-[该项目后台项目](https://github.com/EasyTuan/node-elm-api)
+[项目后台地址](https://github.com/EasyTuan/node-elm-api)
 
 # License
 
