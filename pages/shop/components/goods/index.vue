@@ -47,7 +47,7 @@ import * as shoppingApi from "~/assets/services/shopping";
 export default {
   props: {
     seller: {
-      default: {},
+      default: {}
     }
   },
   data() {
@@ -57,7 +57,7 @@ export default {
       scrollY: 0,
       classMap: ["decrease", "discount", "special", "invoice", "guarantee"],
       currentIndex: 0,
-      isScroll: false,
+      isScroll: false
     };
   },
   computed: {
@@ -73,10 +73,8 @@ export default {
       return foods;
     }
   },
-  created() {
-
-  },
-  mounted () {
+  created() {},
+  mounted() {
     shoppingApi.goods().then(res => {
       if (res.code === 0) {
         this.goods = res.data;
@@ -84,61 +82,73 @@ export default {
     });
 
     //菜品滚动选择类目
-    document.querySelector('.foods-wrapper').addEventListener('scroll', this.throttle(() => {
-      // 防止手动选择的时候误操作
-      if(this.isScroll) {
-        return;
-      }
-      this.goods.map((item, index) => {
-        const rect_top = document.querySelector('#a'+index).getBoundingClientRect().top;
-        const container_top = document.querySelector('.foods-wrapper').getBoundingClientRect().top;
-        if(rect_top - container_top < 100 && rect_top - container_top > -100) {
-          this.currentIndex = index;
+    document.querySelector(".foods-wrapper").addEventListener(
+      "scroll",
+      this.throttle(() => {
+        // 防止手动选择的时候误操作
+        if (this.isScroll) {
+          return;
         }
-      })
-    },50)
-    )
+        this.goods.map((item, index) => {
+          const rect_top = document
+            .querySelector("#a" + index)
+            .getBoundingClientRect().top;
+          const container_top = document
+            .querySelector(".foods-wrapper")
+            .getBoundingClientRect().top;
+          if (
+            rect_top - container_top < 100 &&
+            rect_top - container_top > -100
+          ) {
+            this.currentIndex = index;
+          }
+        });
+      }, 50)
+    );
   },
   methods: {
     selectMenu(index) {
-      if(index === this.currentIndex) {
+      if (index === this.currentIndex) {
         return;
       }
       this.currentIndex = index;
-      this.animateScroll('#a'+index,'.foods-wrapper',50);
+      this.animateScroll("#a" + index, ".foods-wrapper", 50);
     },
     // 平滑滚动方法
     animateScroll(element, container, speed) {
       this.isScroll = true;
-      let rect = document.querySelector(element).getBoundingClientRect().top - document.querySelector(container).getBoundingClientRect().top;
+      let rect =
+        document.querySelector(element).getBoundingClientRect().top -
+        document.querySelector(container).getBoundingClientRect().top;
       //获取元素相对窗口的top值，此处应加上窗口本身的偏移
-      let top= rect + document.querySelector(container).scrollTop;
+      let top = rect + document.querySelector(container).scrollTop;
       let currentTop = 0;
       let requestId;
       //采用requestAnimationFrame，平滑动画
-      const step = (timestamp) => {
+      const step = timestamp => {
         if (currentTop <= top) {
-          document.querySelector(container).scrollTo(0,currentTop);
-          requestId=window.requestAnimationFrame(step);
+          document.querySelector(container).scrollTo(0, currentTop);
+          requestId = window.requestAnimationFrame(step);
         } else {
           window.cancelAnimationFrame(requestId);
           this.isScroll = false;
         }
         currentTop += speed;
-      }
+      };
       window.requestAnimationFrame(step);
     },
     // 函数防抖
-    throttle(method,delay){
-            var timer=null;
-            return function(){
-                var context=this, args=arguments;
-                clearTimeout(timer);
-                timer=setTimeout(function(){
-                    method.apply(context,args);
-                },delay);
-            }
-        }
+    throttle(method, delay) {
+      var timer = null;
+      return function() {
+        var context = this,
+          args = arguments;
+        clearTimeout(timer);
+        timer = setTimeout(function() {
+          method.apply(context, args);
+        }, delay);
+      };
+    }
   },
   components: {
     shopcart,
@@ -148,7 +158,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../../../../assets/styles/mixin';
+@import "../../../../assets/styles/mixin";
 .goods-page {
   display: flex;
   background: #fff;
@@ -156,7 +166,7 @@ export default {
   .menu-wrapper {
     flex: 0 0 80px;
     width: 80px;
-    height: calc( 100vh - 38px);
+    height: calc(100vh - 38px);
     overflow-x: hidden;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
@@ -217,8 +227,8 @@ export default {
   }
 
   .foods-wrapper {
-    width: calc( 100vw - 80px);
-    height: calc( 100vh - 38px);
+    width: calc(100vw - 80px);
+    height: calc(100vh - 38px);
     overflow-x: hidden;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
@@ -242,7 +252,7 @@ export default {
         left: 0;
         bottom: 0;
         width: 100%;
-        content: ' ';
+        content: " ";
       }
 
       &:last-child {
@@ -268,7 +278,8 @@ export default {
           color: rgb(7, 17, 27);
         }
 
-        .desc, .extra {
+        .desc,
+        .extra {
           line-height: 10px;
           font-size: 12px;
           color: rgb(147, 153, 159);

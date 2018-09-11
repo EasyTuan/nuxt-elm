@@ -218,7 +218,6 @@ export default {
 </script>
 
 <style lang="scss">
-
 .shopcart {
   position: fixed;
   left: 0;
@@ -230,7 +229,7 @@ export default {
 
   .content {
     display: flex;
-    background: rgba(61,61,63,.9);
+    background: rgba(61, 61, 63, 0.9);
     font-size: 0;
     color: rgba(255, 255, 255, 0.4);
 
@@ -248,7 +247,7 @@ export default {
         height: 56px;
         box-sizing: border-box;
         border-radius: 50%;
-        background-image: radial-gradient(circle,#363636 6.266667vw,#444 0);
+        background-image: radial-gradient(circle, #363636 6.266667vw, #444 0);
 
         .logo {
           width: 100%;
@@ -284,7 +283,7 @@ export default {
           font-weight: 700;
           color: #ffffff;
           box-shadow: 0px 4px 8px 0 rgba(0, 0, 0, 0.4);
-          background-image: linear-gradient(-90deg,#ff7416,#ff3c15 98%);
+          background-image: linear-gradient(-90deg, #ff7416, #ff3c15 98%);
         }
       }
 
@@ -374,11 +373,13 @@ export default {
     width: 100%;
     transform: translate3d(0, -100%, 0);
 
-    &.fold-enter-active, &.fold-leave-active {
+    &.fold-enter-active,
+    &.fold-leave-active {
       transition: all 0.5s;
     }
 
-    &.fold-enter, &.fold-leave-active {
+    &.fold-enter,
+    &.fold-leave-active {
       transform: translate3d(0, 0, 0);
     }
 
@@ -422,7 +423,7 @@ export default {
           bottom: 0;
           width: 100%;
           border: 1px solid rgba(7, 17, 27, 0.1);
-          content: ' ';
+          content: " ";
         }
         .name {
           line-height: 24px;

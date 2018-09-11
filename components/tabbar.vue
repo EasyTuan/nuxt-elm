@@ -11,7 +11,7 @@
           </svg>
         </div>
         首页
-      </div>
+      </div>ßß
     </mt-tab-item>
     <mt-tab-item id="1">
       <div @click="goPage('/discover')">
@@ -57,41 +57,41 @@
 
 <script>
 export default {
-  props:{
-    page:{
-      default: 0,
+  props: {
+    page: {
+      default: 0
     }
   },
-  data () {
+  data() {
     return {
-      selected:0
-    }
+      selected: 0
+    };
   },
-  created () {
+  created() {
     this.selected = this.page;
   },
   methods: {
-    goPage(url){
+    goPage(url) {
       this.$router.replace(url);
     }
   }
-}
+};
 </script>
 
 <style lang="scss" scoped>
-  @import "../assets/styles/mixin";
+@import "../assets/styles/mixin";
 
-  .mint-tabbar > .mint-tab-item.is-selected {
-    background: #fafafa;
-  }
-  .mint-tab-item-icon {
-    @include wh(22px, 22px);
-  }
-  .mint-tabbar {
-    color: #818181;
-    position: fixed;
-  }
-  .mint-tabbar > .mint-tab-item.is-selected {
-    color: $primary;
-  }
+.mint-tabbar > .mint-tab-item.is-selected {
+  background: #fafafa;
+}
+.mint-tab-item-icon {
+  @include wh(22px, 22px);
+}
+.mint-tabbar {
+  color: #818181;
+  position: fixed;
+}
+.mint-tabbar > .mint-tab-item.is-selected {
+  color: $primary;
+}
 </style>

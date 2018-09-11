@@ -134,200 +134,198 @@
 </template>
 
 <script>
-  import Tabbar from '~/components/tabbar';
-  import { mapGetters } from 'vuex';
+import Tabbar from "~/components/tabbar";
+import { mapGetters } from "vuex";
 
-  export default {
-    data() {
-      return {
-        profiletitle: "我的",
-        username: "登录/注册", //用户名
-        resetname: "",
-        mobile: "登录后享受更多特权", //电话号码
-        avatar: "" //头像地址
-      };
-    },
-    mounted() {
-      this.initData();
-    },
-    components: {
-      Tabbar
-    },
-    head: {
-      title: '我的'
-    },
-    computed: {
-			...mapGetters([
-        'userInfo',
-			])
-    },
-    methods: {
-      initData() {
-        if (this.userInfo && this.userInfo.user_id) {
-          this.avatar = this.userInfo.avatar;
-          this.username = this.userInfo.username;
-          this.mobile = this.userInfo.mobile || "登录后享受更多特权";
-        } else {
-          this.username = "登录/注册";
-          this.mobile = "登录后享受更多特权";
-        }
-      }
-    },
-    watch: {
-      userInfo: function(value) {
-        this.initData();
+export default {
+  data() {
+    return {
+      profiletitle: "我的",
+      username: "登录/注册", //用户名
+      resetname: "",
+      mobile: "登录后享受更多特权", //电话号码
+      avatar: "" //头像地址
+    };
+  },
+  mounted() {
+    this.initData();
+  },
+  components: {
+    Tabbar
+  },
+  head: {
+    title: "我的"
+  },
+  computed: {
+    ...mapGetters(["userInfo"])
+  },
+  methods: {
+    initData() {
+      if (this.userInfo && this.userInfo.user_id) {
+        this.avatar = this.userInfo.avatar;
+        this.username = this.userInfo.username;
+        this.mobile = this.userInfo.mobile || "登录后享受更多特权";
+      } else {
+        this.username = "登录/注册";
+        this.mobile = "登录后享受更多特权";
       }
     }
-  };
+  },
+  watch: {
+    userInfo: function(value) {
+      this.initData();
+    }
+  }
+};
 </script>
 
 <style lang="scss" scoped>
-  @import "../../assets/styles/mixin";
+@import "../../assets/styles/mixin";
 
-  .user-page {
-    .profile-number {
-      padding-top: px2rem(88px);
-      .profile-link {
-        display: block;
-        display: flex;
-        -webkit-box-align: center;
-        -ms-flex-align: center;
-        align-items: center;
-        background: $primary;
-        padding: 1.2rem 0.6rem;
-        .privateImage {
-          display: inline-block;
-          @include wh(2.5rem, 2.5rem);
+.user-page {
+  .profile-number {
+    padding-top: px2rem(88px);
+    .profile-link {
+      display: block;
+      display: flex;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      align-items: center;
+      background: $primary;
+      padding: 1.2rem 0.6rem;
+      .privateImage {
+        display: inline-block;
+        @include wh(2.5rem, 2.5rem);
+        border-radius: 50%;
+        vertical-align: middle;
+        img {
+          background: $fc;
           border-radius: 50%;
-          vertical-align: middle;
-          img {
-            background: $fc;
-            border-radius: 50%;
-            @include wh(2.5rem, 2.5rem);
-          }
-        }
-        .user-info {
-          margin-left: 0.8rem;
-          -webkit-box-flex: 1;
-          -ms-flex-positive: 1;
-          flex-grow: 1;
-          p {
-            font-weight: 700;
-            @include sc(0.8rem, $fc);
-            .user-icon {
-              @include wh(0.3rem, 0.5rem);
-              display: inline-block;
-              vertical-align: middle;
-              line-height: 0.75rem;
-              position: relative;
-              top: -0.12rem;
-              .icon-mobile {
-                @include wh(100%, 100%);
-              }
-            }
-            .icon-mobile-number {
-              display: inline-block;
-              margin-left: px2rem(5px);
-              @include sc(0.57333rem, $fc);
-            }
-          }
-        }
-        .arrow {
-          @include wh(0.46667rem, 0.98rem);
-          display: inline-block;
-          svg {
-            @include wh(100%, 100%);
-          }
+          @include wh(2.5rem, 2.5rem);
         }
       }
-    }
-    .info-data {
-      width: 100%;
-      background: $fc;
-      box-sizing: border-box;
-      ul {
-        @include fj();
-        .info-data-link {
-          display: inline-block;
-          width: calc(100% / 3);
-          border-right: 1px solid #f1f1f1;
-          span {
-            display: block;
-            width: 100%;
-            text-align: center;
-          }
-          .info-data-top {
-            @include sc(0.55rem, #333);
-            padding: 0.853333rem 0 0.453333rem;
-            b {
-              display: inline-block;
-              @include sc(1.2rem, $primary);
-              font-weight: 500;
-              line-height: 1rem;
-              font-family: Helvetica Neue, Tahoma;
-            }
-          }
-          .info-data-bottom {
-            @include sc(0.57333rem, #666);
-            font-weight: 400;
-            padding-bottom: 0.453333rem;
-          }
-        }
-        .info-data-link:nth-of-type(2) {
-          .info-data-top {
-            b {
-              color: #ff5f3e;
-            }
-          }
-        }
-        .info-data-link:nth-of-type(3) {
-          border: 0;
-          .info-data-top {
-            b {
-              color: #6ac20b;
-            }
-          }
-        }
-      }
-    }
-    .profile-1reTe {
-      margin-top: 0.4rem;
-      background: $fc;
-      .myorder {
-        padding-left: 1.6rem;
-        display: flex;
-        align-items: center;
-        aside {
-          @include wh(0.7rem, 0.7rem);
-          margin-left: -0.866667rem;
-          margin-right: 0.266667rem;
-          display: flex;
-          align-items: center;
-          svg {
-            @include wh(100%, 100%);
-          }
-        }
-        .myorder-div {
-          width: 100%;
-          border-bottom: 1px solid #f1f1f1;
-          padding: 0.433333rem 0.266667rem 0.433333rem 0;
-          @include sc(0.7rem, #333);
-          display: flex;
-          justify-content: space-between;
-          span {
-            display: block;
-          }
-          .myorder-divsvg {
-            @include wh(0.46667rem, 0.466667rem);
-            svg {
+      .user-info {
+        margin-left: 0.8rem;
+        -webkit-box-flex: 1;
+        -ms-flex-positive: 1;
+        flex-grow: 1;
+        p {
+          font-weight: 700;
+          @include sc(0.8rem, $fc);
+          .user-icon {
+            @include wh(0.3rem, 0.5rem);
+            display: inline-block;
+            vertical-align: middle;
+            line-height: 0.75rem;
+            position: relative;
+            top: -0.12rem;
+            .icon-mobile {
               @include wh(100%, 100%);
             }
           }
+          .icon-mobile-number {
+            display: inline-block;
+            margin-left: px2rem(5px);
+            @include sc(0.57333rem, $fc);
+          }
         }
       }
-      .myorder:nth-of-type(3) .myorder-div {
-        border: 0;
+      .arrow {
+        @include wh(0.46667rem, 0.98rem);
+        display: inline-block;
+        svg {
+          @include wh(100%, 100%);
+        }
       }
     }
   }
+  .info-data {
+    width: 100%;
+    background: $fc;
+    box-sizing: border-box;
+    ul {
+      @include fj();
+      .info-data-link {
+        display: inline-block;
+        width: calc(100% / 3);
+        border-right: 1px solid #f1f1f1;
+        span {
+          display: block;
+          width: 100%;
+          text-align: center;
+        }
+        .info-data-top {
+          @include sc(0.55rem, #333);
+          padding: 0.853333rem 0 0.453333rem;
+          b {
+            display: inline-block;
+            @include sc(1.2rem, $primary);
+            font-weight: 500;
+            line-height: 1rem;
+            font-family: Helvetica Neue, Tahoma;
+          }
+        }
+        .info-data-bottom {
+          @include sc(0.57333rem, #666);
+          font-weight: 400;
+          padding-bottom: 0.453333rem;
+        }
+      }
+      .info-data-link:nth-of-type(2) {
+        .info-data-top {
+          b {
+            color: #ff5f3e;
+          }
+        }
+      }
+      .info-data-link:nth-of-type(3) {
+        border: 0;
+        .info-data-top {
+          b {
+            color: #6ac20b;
+          }
+        }
+      }
+    }
+  }
+  .profile-1reTe {
+    margin-top: 0.4rem;
+    background: $fc;
+    .myorder {
+      padding-left: 1.6rem;
+      display: flex;
+      align-items: center;
+      aside {
+        @include wh(0.7rem, 0.7rem);
+        margin-left: -0.866667rem;
+        margin-right: 0.266667rem;
+        display: flex;
+        align-items: center;
+        svg {
+          @include wh(100%, 100%);
+        }
+      }
+      .myorder-div {
+        width: 100%;
+        border-bottom: 1px solid #f1f1f1;
+        padding: 0.433333rem 0.266667rem 0.433333rem 0;
+        @include sc(0.7rem, #333);
+        display: flex;
+        justify-content: space-between;
+        span {
+          display: block;
+        }
+        .myorder-divsvg {
+          @include wh(0.46667rem, 0.466667rem);
+          svg {
+            @include wh(100%, 100%);
+          }
+        }
+      }
+    }
+    .myorder:nth-of-type(3) .myorder-div {
+      border: 0;
+    }
+  }
+}
 </style>

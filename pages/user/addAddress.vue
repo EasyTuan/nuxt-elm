@@ -16,16 +16,16 @@
 <script>
 import { Toast } from "mint-ui";
 import { mapGetters } from "vuex";
-import v from '~/assets/utils/validate';
-import { addAddress } from '~/assets/services/user';
+import v from "~/assets/utils/validate";
+import { addAddress } from "~/assets/services/user";
 
 export default {
   data() {
     return {
-      name: '',
-      phone: '',
-      address: '',
-      details: '',
+      name: "",
+      phone: "",
+      address: "",
+      details: ""
     };
   },
   head: {
@@ -36,19 +36,16 @@ export default {
     this.initData();
   },
   computed: {
-    ...mapGetters([
-      "userInfo"
-    ])
+    ...mapGetters(["userInfo"])
   },
   methods: {
     //数据初始化
     initData() {
       if (this.$route.query.pkid != 0) {
-
       }
     },
     async submit() {
-      if(!v.required(this.name)) {
+      if (!v.required(this.name)) {
         Toast({
           message: "请输入联系人",
           position: "bottom",
@@ -56,7 +53,7 @@ export default {
         });
         return;
       }
-      if(!v.tel(this.phone)) {
+      if (!v.tel(this.phone)) {
         Toast({
           message: "手机号格式不正确",
           position: "bottom",
@@ -64,7 +61,7 @@ export default {
         });
         return;
       }
-      if(!v.required(this.address)) {
+      if (!v.required(this.address)) {
         Toast({
           message: "请输入地址",
           position: "bottom",
@@ -76,9 +73,9 @@ export default {
         name: this.name,
         phone: this.phone,
         address: this.address,
-        details: this.details,
-      })
-      if(code === 0) {
+        details: this.details
+      });
+      if (code === 0) {
         Toast({
           message: "保存成功!",
           position: "bottom",
@@ -86,7 +83,7 @@ export default {
         });
         this.$router.go(-1);
       }
-    },
+    }
   }
 };
 </script>

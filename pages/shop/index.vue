@@ -30,13 +30,13 @@ import * as shoppingApi from "~/assets/services/shopping";
 export default {
   data() {
     return {
-      selected: 'goods',
-      seller: {},
+      selected: "goods",
+      seller: {}
     };
   },
   async asyncData() {
     const { data } = await shoppingApi.seller();
-    return { seller: data }
+    return { seller: data };
   },
   created() {
     // vue resource
@@ -58,7 +58,7 @@ export default {
 </script>
 
 <style lang="scss">
-@import '../../assets/styles/mixin';
+@import "../../assets/styles/mixin";
 .shop-page {
   font-size: px2rem(24px);
   .mint-navbar {
@@ -75,7 +75,7 @@ export default {
         border: none;
         position: relative;
         &::after {
-          content: ' ';
+          content: " ";
           display: inline-block;
           @include wh(20%, 2px);
           background: #2395ff;

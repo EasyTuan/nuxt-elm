@@ -86,9 +86,9 @@ export default {
     shoppingApi.ratings().then(res => {
       if (res.code === 0) {
         this.ratings = res.data;
-        this.ratings.map((item) => {
-          item.rateTime = moment(item.rateTime).format('YYYY/M/D');
-        })
+        this.ratings.map(item => {
+          item.rateTime = moment(item.rateTime).format("YYYY/M/D");
+        });
       }
     });
   },
@@ -119,7 +119,7 @@ export default {
 
 
 <style lang="scss">
-@import '../../../../assets/styles/mixin';
+@import "../../../../assets/styles/mixin";
 .ratings-page {
   background: #fff;
   .placeholder {
@@ -177,7 +177,7 @@ export default {
           display: inline-block;
           width: 30px;
           height: 30px;
-          background: url('../../../../assets/images/sprite-avatar.png');
+          background: url("../../../../assets/images/sprite-avatar.png");
           background-position: 0 0;
           background-size: 30px;
         }
@@ -212,7 +212,8 @@ export default {
           line-height: 16px;
           font-size: 0;
 
-          .icon-thumb_up, .item {
+          .icon-thumb_up,
+          .item {
             display: inline-block;
             margin: 0 8px 4px 0;
             font-size: 9px;

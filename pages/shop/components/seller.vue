@@ -14,15 +14,15 @@
 </template>
 
 <script>
-import config from '~/config';
+import config from "~/config";
 export default {
   props: {
     seller: {
-      default: {},
+      default: {}
     }
   },
   computed: {
-    banner:function() {
+    banner: function() {
       return config.IMG_URL + this.seller.banner;
     }
   }

@@ -13,26 +13,26 @@
 </template>
 
 <script>
-  import Tabbar from '~/components/tabbar';
+import Tabbar from "~/components/tabbar";
 
-  export default {
-    components: {
-      Tabbar
-    },
-    head: {
-      title: '发现'
-    }
+export default {
+  components: {
+    Tabbar
+  },
+  head: {
+    title: "发现"
   }
+};
 </script>
 
 <style lang="scss">
-  @import '../assets/styles/mixin';
+@import "../assets/styles/mixin";
 
-  .discover-page {
-    padding: px2rem(88px) 0 53px 0;
-    a {
-      display: block;
-    }
+.discover-page {
+  padding: px2rem(88px) 0 53px 0;
+  a {
+    display: block;
   }
+}
 </style>
 

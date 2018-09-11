@@ -19,20 +19,26 @@ const getters = {
 }
 
 const actions = {
-  login({ commit }, value) {
-    commit(LOGIN,value);
+  login({
+    commit
+  }, value) {
+    commit(LOGIN, value);
   },
-  outLogin({ commit }) {
+  outLogin({
+    commit
+  }) {
     commit(OUT_LOGIN);
   },
-  update({ commit }, value) {
-    commit(USER_INFO_UPDATA,value);
+  update({
+    commit
+  }, value) {
+    commit(USER_INFO_UPDATA, value);
   }
 }
 
 const mutations = {
-  [LOGIN](state,value) {
-    cookies.set('userInfo',{
+  [LOGIN](state, value) {
+    cookies.set('userInfo', {
       avatar: value.avatar,
       // create_time: value.create_time,
       mobile: value.mobile,
@@ -45,9 +51,9 @@ const mutations = {
     cookies.remove('userInfo');
     state.userInfo = {};
   },
-  [USER_INFO_UPDATA](state,value) {
-    state.userInfo = Object.assign(state.userInfo,value);
-    cookies.set('userInfo',state.userInfo);
+  [USER_INFO_UPDATA](state, value) {
+    state.userInfo = Object.assign(state.userInfo, value);
+    cookies.set('userInfo', state.userInfo);
   },
 }
 

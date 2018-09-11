@@ -5,17 +5,17 @@
 </template>
 
 <script>
-  export default {
-    head: {
-      title: 'download'
-    }
+export default {
+  head: {
+    title: "download"
   }
+};
 </script>
 
 <style lang="scss">
-  @import '../assets/styles/mixin';
+@import "../assets/styles/mixin";
 
-  .download-page {
-    padding: 0;
-  }
+.download-page {
+  padding: 0;
+}
 </style>

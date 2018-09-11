@@ -20,35 +20,35 @@
 </template>
 
 <script>
-  export default {
-    props:['rating']
-  }
+export default {
+  props: ["rating"]
+};
 </script>
 
 <style lang="scss" scoped>
-  @import "../assets/styles/mixin";
-	.rating_container{
+@import "../assets/styles/mixin";
+.rating_container {
+  position: relative;
+  top: 0.1rem;
+  @include wh(2rem, 0.4rem);
+  .star_overflow {
+    overflow: hidden;
     position: relative;
-    top: .1rem;
-    @include wh(2rem, .4rem);
-    .star_overflow{
-      overflow: hidden;
-      position: relative;
-      height: 100%;
+    height: 100%;
+  }
+  .star_container {
+    position: absolute;
+    display: flex;
+    width: 2rem;
+    height: 0.4rem;
+    top: -0.02rem;
+    left: -0.02rem;
+    .grey_fill {
+      fill: #d1d1d1;
     }
-    .star_container{
-      position: absolute;
-      display: flex;
-      width: 2rem;
-      height: 0.4rem;
-      top: -0.02rem;
-      left: -0.02rem;
-      .grey_fill{
-        fill: #d1d1d1;
-      }
-      .orange_fill{
-        fill: #f8ce46;
-      }
+    .orange_fill {
+      fill: #f8ce46;
     }
   }
+}
 </style>

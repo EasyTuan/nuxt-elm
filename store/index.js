@@ -13,10 +13,19 @@ const store = () => new Vuex.Store({
     userInfo,
   },
   actions: {
-    nuxtServerInit ({ _, commit }, { req }) {
+    nuxtServerInit({
+      _,
+      commit
+    }, {
+      req
+    }) {
       if (req.headers.cookie) {
         // 解析cookie
-        let cookie = req.headers.cookie, cookieObj = {}, cookieArr = [], key = '', value = '';
+        let cookie = req.headers.cookie,
+          cookieObj = {},
+          cookieArr = [],
+          key = '',
+          value = '';
         cookie = cookie.split(';')
         for (let i = 0; i < cookie.length; i++) {
           cookieArr = cookie[i].trim().split('=')
@@ -25,9 +34,9 @@ const store = () => new Vuex.Store({
           cookieObj[key] = value
         }
 
-        if(cookieObj.userInfo) {
+        if (cookieObj.userInfo) {
           const userInfo = JSON.parse(decodeURIComponent(cookieObj.userInfo));
-          if(userInfo) {
+          if (userInfo) {
             commit(LOGIN, userInfo)
           }
         }
