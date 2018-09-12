@@ -11,7 +11,7 @@
           </svg>
         </div>
         首页
-      </div>ßß
+      </div>
     </mt-tab-item>
     <mt-tab-item id="1">
       <div @click="goPage('/discover')">

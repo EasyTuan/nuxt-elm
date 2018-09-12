@@ -4,7 +4,7 @@
       <mt-button @click="$router.push('/search')" icon="search" slot="right"></mt-button>
     </mt-header>
     <nav class="nav-container">
-      <div class="nav-item"  v-for="(item, index) in navList" :key="index">
+      <div class="nav-item" @click="$router.push({path:'/newretail', query:{ title: item.text }})" v-for="(item, index) in navList" :key="index">
         <img :src="item.imgUrl" alt="">
         {{item.text}}
       </div>
@@ -17,7 +17,21 @@
         <img src="~/assets/images/show2.png" alt="">
       </a>
     </div>
-    <div style="height:20px;clear:both"></div>
+    <div style="height:5px;clear:both"></div>
+    <div class="swiper">
+      <mt-swipe :auto="3000" style="height:100px;">
+        <mt-swipe-item>
+          <img src="~/assets/images/banner/4a6f8262a2a006c0bd6ba31b137c4jpeg.png" alt="">
+        </mt-swipe-item>
+        <mt-swipe-item>
+          <img src="~/assets/images/banner/146be328e7121c456ac67f54b59fbjpeg.png" alt="">
+        </mt-swipe-item>
+        <mt-swipe-item>
+          <img src="~/assets/images/banner/b28f567a846a21f01aa39a55d6facjpeg.png" alt="">
+        </mt-swipe-item>
+      </mt-swipe>
+    </div>
+    <div style="height:10px;clear:both"></div>
     <p class="shoplist-title">—— 推荐商家 ——</p>
     <ShopList />
     <Tabbar page='0' />
@@ -73,6 +87,9 @@ export default {
         @include wh(50px, 50px);
       }
     }
+  }
+  .swiper {
+    padding: 0 0.4rem;
   }
   .shoplist-title {
     @include fj(center);
