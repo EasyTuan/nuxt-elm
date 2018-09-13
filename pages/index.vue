@@ -11,23 +11,17 @@
     </nav>
     <div class="show-list">
       <a href="https://h5.ele.me/ranking/#type=quality_meal&activity_id=1&title=%E5%93%81%E8%B4%A8%E5%A5%97%E9%A4%90&navType=0&geohash=wtw3ycy6v7pe">
-        <img src="~/assets/images/show1.png" alt="">
+        <img :src="show1" alt="">
       </a>
       <a href="https://h5.ele.me/sales/#geohash=wtw3ycy6v7pe">
-        <img src="~/assets/images/show2.png" alt="">
+        <img :src="show2" alt="">
       </a>
     </div>
     <div style="height:5px;clear:both"></div>
     <div class="swiper">
       <mt-swipe :auto="3000" style="height:100px;">
-        <mt-swipe-item>
-          <img src="~/assets/images/banner/4a6f8262a2a006c0bd6ba31b137c4jpeg.png" alt="">
-        </mt-swipe-item>
-        <mt-swipe-item>
-          <img src="~/assets/images/banner/146be328e7121c456ac67f54b59fbjpeg.png" alt="">
-        </mt-swipe-item>
-        <mt-swipe-item>
-          <img src="~/assets/images/banner/b28f567a846a21f01aa39a55d6facjpeg.png" alt="">
+        <mt-swipe-item v-for="(item, index) in bannerList" :key="index">
+          <img :src="item" alt="">
         </mt-swipe-item>
       </mt-swipe>
     </div>
@@ -52,7 +46,14 @@ export default {
   data() {
     return {
       data: "静安区",
-      navList: []
+      navList: [],
+      show1:`${config.IMG_URL}show1.png`,
+      show2:`${config.IMG_URL}show2.png`,
+      bannerList: [
+        `${config.IMG_URL}banner/4a6f8262a2a006c0bd6ba31b137c4jpeg.png`,
+        `${config.IMG_URL}banner/146be328e7121c456ac67f54b59fbjpeg.png`,
+        `${config.IMG_URL}banner/b28f567a846a21f01aa39a55d6facjpeg.png`,
+      ],
     };
   },
   async asyncData() {

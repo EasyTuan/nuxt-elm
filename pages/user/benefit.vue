@@ -5,16 +5,22 @@
         <mt-button icon="back"></mt-button>
       </div>
     </mt-header>
-    <img class="benefit-img" src="~/assets/images/benefit.gif" alt="">
+    <img class="benefit-img" :src="benefit" alt="">
     <h2>没有红包</h2>
     <p>快去抢几个吧</p>
   </div>
 </template>
 
 <script>
+import config from "~/config";
 export default {
   head: {
     title: "我的优惠"
+  },
+  data () {
+    return {
+      benefit: `${config.IMG_URL}benefit.gif`,
+    }
   }
 };
 </script>

@@ -1,13 +1,19 @@
 <template>
   <div class="download-page">
-    <img src="~/assets/images/startup.png" alt="">
+    <img :src="startup" alt="">
   </div>
 </template>
 
 <script>
+import config from "~/config";
 export default {
   head: {
-    title: "download"
+    title: "下载APP"
+  },
+  data () {
+    return {
+      startup: `${config.IMG_URL}startup.png`,
+    }
   }
 };
 </script>

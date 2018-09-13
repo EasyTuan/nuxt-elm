@@ -2,7 +2,7 @@
   <div class="order-page">
     <mt-header fixed title="订单"></mt-header>
     <div class="no-data">
-      <img class="nodata" src="~/assets/images/nodata.png" alt="">
+      <img class="nodata" :src="nodata" alt="">
       <p v-if="!userInfo||!userInfo.user_id">登陆后查看外卖订单</p>
       <p v-if="userInfo&&userInfo.user_id">暂无订单信息</p>
       <button v-if="!userInfo||!userInfo.user_id" class="login" @click="$router.push('/login')">立即登录</button>
@@ -12,6 +12,7 @@
 </template>
 
 <script>
+import config from "~/config";
 import Tabbar from "~/components/tabbar";
 import { mapGetters } from "vuex";
 
@@ -24,6 +25,11 @@ export default {
   },
   computed: {
     ...mapGetters(["userInfo"])
+  },
+  data () {
+    return {
+      nodata: `${config.IMG_URL}nodata.png`,
+    }
   }
 };
 </script>
