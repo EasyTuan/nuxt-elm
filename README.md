@@ -6,11 +6,15 @@
 
 # 效果演示
 
-[查看demo请戳这里](http://47.100.122.91:3000/)（请用chrome手机模式预览）
+[查看demo请戳这里](https://elm.caibowen.net/)（请用chrome手机模式预览）
 
 ### 移动端扫描下方二维码
 
 <img src="./screenshots/qr-code.png" width="250" height="250"/>
+
+# API接口文档
+
+[接口文档地址](https://easytuan.gitee.io/node-elm-api/doc)（基于apidoc）
 
 # 技术栈
 

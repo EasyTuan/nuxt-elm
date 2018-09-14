@@ -13,7 +13,7 @@ module.exports = {
       { rel: 'SHORTCUT ICON', type: 'image/x-icon', href: '/favicon.ico' }
     ],
     script: [
-      { src: 'http://g.tbcdn.cn/mtb/lib-flexible/0.2.3/??flexible_css.js,flexible.js' },
+      { src: 'https://easytuan.gitee.io/node-elm-api/public/flexible.js' },
     ],
   },
 
@@ -48,7 +48,7 @@ module.exports = {
     [
       '/api',{
         // target: 'http://localhost:9000',
-        target: 'http://elm-api.caibowen.net',
+        target: 'https://elm-api.caibowen.net',
         changeOrigin: true,
         pathRewrite: { '^/api' : '/' }
       }
