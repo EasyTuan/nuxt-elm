@@ -48,7 +48,7 @@ module.exports = {
     [
       '/api',{
         // target: 'http://localhost:9000',
-        target: 'http://47.100.122.91:9000',
+        target: 'http://elm-api.caibowen.net',
         changeOrigin: true,
         pathRewrite: { '^/api' : '/' }
       }

@@ -6,7 +6,7 @@ module.exports = {
 
   BASE_URL: `http://localhost:${port}/api`, // 测试
 
-  // BASE_URL: `http://47.100.122.91:${port}/api`, // 生产
+  // BASE_URL: `http://elm-api.caibowen.net/api`, // 生产
 
   // IMG_URL: 'http://localhost:9000/', // 测试
 
