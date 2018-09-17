@@ -19,6 +19,7 @@ const store = () => new Vuex.Store({
     }, {
       req
     }) {
+      // cookie持久化,这会导致服务的cookie缓存
       // if (req.headers.cookie) {
       //   // 解析cookie
       //   let cookie = req.headers.cookie,

@@ -14,6 +14,9 @@ const state = {
 
 const getters = {
   userInfo(state) {
+    if (typeof window !== "undefined" && JSON.stringify(state.userInfo) === '{}' && cookies.get('userInfo')) {
+      state.userInfo = JSON.parse(cookies.get('userInfo'));
+    }
     return state.userInfo;
   },
 }
