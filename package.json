@@ -10,6 +10,7 @@
     "start": "nuxt build && pm2 start ./node_modules/nuxt/bin/nuxt -- start --node-args='--harmony'",
     "stop": "pm2 stop ./node_modules/nuxt/bin/nuxt -- start",
     "restart": "nuxt build && pm2 restart ./node_modules/nuxt/bin/nuxt -- start --node-args='--harmony'",
+    "delete": "pm2 delete ./node_modules/nuxt/bin/nuxt -- start",
     "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
     "tep": "node template",
     "precommit": "npm run lint"
