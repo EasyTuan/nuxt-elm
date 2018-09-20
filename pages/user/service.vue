@@ -23,41 +23,48 @@
 </template>
 
 <script>
-export default {
-  head: {
-    title: "我的客服"
-  }
-};
+  export default {
+    head: {
+      title: "我的客服"
+    }
+  };
+
 </script>
 
 <style lang="scss">
-@import "../../assets/styles/mixin";
+  @import "../../assets/styles/mixin";
 
-.service-page {
-  padding: px2rem(88px) 0 0 0;
-  height: 100vh;
-  background: #fff;
-  .service_connect {
-    @include fj;
-    a {
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 4rem;
-      border-bottom: 1px solid #f5f5f5;
-      svg {
-        @include wh(1rem, 1rem);
+  .service-page {
+    padding: px2rem(88px) 0 0 0;
+    height: 100vh;
+    background: #fff;
+
+    .service_connect {
+      @include fj;
+
+      a {
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        height: 4rem;
+        border-bottom: 1px solid #f5f5f5;
+
+        svg {
+          @include wh(1rem, 1rem);
+        }
+
+        span {
+          margin-top: 0.4rem;
+          @include sc(0.6rem, #666);
+        }
       }
-      span {
-        margin-top: 0.4rem;
-        @include sc(0.6rem, #666);
+
+      .service_left {
+        border-right: 1px solid #f5f5f5;
       }
-    }
-    .service_left {
-      border-right: 1px solid #f5f5f5;
     }
   }
-}
+
 </style>

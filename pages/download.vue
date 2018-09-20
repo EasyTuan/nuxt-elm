@@ -5,23 +5,25 @@
 </template>
 
 <script>
-import config from "~/config";
-export default {
-  head: {
-    title: "下载APP"
-  },
-  data () {
-    return {
-      startup: `${config.IMG_URL}startup.png`,
+  import config from "~/config";
+  export default {
+    head: {
+      title: "下载APP"
+    },
+    data() {
+      return {
+        startup: `${config.IMG_URL}startup.png`,
+      }
     }
-  }
-};
+  };
+
 </script>
 
 <style lang="scss">
-@import "../assets/styles/mixin";
+  @import "../assets/styles/mixin";
 
-.download-page {
-  padding: 0;
-}
+  .download-page {
+    padding: 0;
+  }
+
 </style>

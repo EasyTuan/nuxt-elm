@@ -12,36 +12,42 @@
 </template>
 
 <script>
-import config from "~/config";
-export default {
-  head: {
-    title: "我的优惠"
-  },
-  data () {
-    return {
-      benefit: `${config.IMG_URL}benefit.gif`,
+  import config from "~/config";
+  export default {
+    head: {
+      title: "我的优惠"
+    },
+    data() {
+      return {
+        benefit: `${config.IMG_URL}benefit.gif`,
+      }
     }
-  }
-};
+  };
+
 </script>
 
 <style lang="scss">
-@import "../../assets/styles/mixin";
-.benefit-page {
-  text-align: center;
-  .benefit-img {
-    width: 60vw;
-    margin: 30% auto 0 auto;
+  @import "../../assets/styles/mixin";
+
+  .benefit-page {
+    text-align: center;
+
+    .benefit-img {
+      width: 60vw;
+      margin: 30% auto 0 auto;
+    }
+
+    h2 {
+      margin: px2rem(30px) 0;
+      font-size: px2rem(32px);
+      font-weight: normal;
+      color: #6a6a6a;
+    }
+
+    p {
+      font-size: px2rem(24px);
+      color: #999;
+    }
   }
-  h2 {
-    margin: px2rem(30px) 0;
-    font-size: px2rem(32px);
-    font-weight: normal;
-    color: #6a6a6a;
-  }
-  p {
-    font-size: px2rem(24px);
-    color: #999;
-  }
-}
+
 </style>

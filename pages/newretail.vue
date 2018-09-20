@@ -10,17 +10,20 @@
 </template>
 
 <script>
-import ShopList from "~/components/shopList";
-export default {
-  components: {
-    ShopList
-  }
-};
+  import ShopList from "~/components/shopList";
+  export default {
+    components: {
+      ShopList
+    }
+  };
+
 </script>
 
 <style lang="scss">
-@import "../assets/styles/mixin";
-.newretail-page {
-  padding: px2rem(88px) 0 0 0;
-}
+  @import "../assets/styles/mixin";
+
+  .newretail-page {
+    padding: px2rem(88px) 0 0 0;
+  }
+
 </style>

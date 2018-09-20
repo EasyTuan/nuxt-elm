@@ -13,33 +13,35 @@
 </template>
 
 <script>
-import config from "~/config";
-import Tabbar from "~/components/tabbar";
+  import config from "~/config";
+  import Tabbar from "~/components/tabbar";
 
-export default {
-  components: {
-    Tabbar
-  },
-  head: {
-    title: "发现"
-  },
-  data () {
-    return {
-      discover1: `${config.IMG_URL}discover/discover1.jpg`,
-      discover2: `${config.IMG_URL}discover/discover2.jpg`,
+  export default {
+    components: {
+      Tabbar
+    },
+    head: {
+      title: "发现"
+    },
+    data() {
+      return {
+        discover1: `${config.IMG_URL}discover/discover1.jpg`,
+        discover2: `${config.IMG_URL}discover/discover2.jpg`,
+      }
     }
-  }
-};
+  };
+
 </script>
 
 <style lang="scss">
-@import "../assets/styles/mixin";
+  @import "../assets/styles/mixin";
 
-.discover-page {
-  padding: px2rem(88px) 0 53px 0;
-  a {
-    display: block;
+  .discover-page {
+    padding: px2rem(88px) 0 53px 0;
+
+    a {
+      display: block;
+    }
   }
-}
-</style>
 
+</style>

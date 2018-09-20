@@ -56,42 +56,47 @@
 </template>
 
 <script>
-export default {
-  props: {
-    page: {
-      default: 0
+  export default {
+    props: {
+      page: {
+        default: 0
+      }
+    },
+    data() {
+      return {
+        selected: 0
+      };
+    },
+    created() {
+      this.selected = this.page;
+    },
+    methods: {
+      goPage(url) {
+        this.$router.replace(url);
+      }
     }
-  },
-  data() {
-    return {
-      selected: 0
-    };
-  },
-  created() {
-    this.selected = this.page;
-  },
-  methods: {
-    goPage(url) {
-      this.$router.replace(url);
-    }
-  }
-};
+  };
+
 </script>
 
 <style lang="scss" scoped>
-@import "../assets/styles/mixin";
+  @import "../assets/styles/mixin";
 
-.mint-tabbar > .mint-tab-item.is-selected {
-  background: #fafafa;
-}
-.mint-tab-item-icon {
-  @include wh(22px, 22px);
-}
-.mint-tabbar {
-  color: #818181;
-  position: fixed;
-}
-.mint-tabbar > .mint-tab-item.is-selected {
-  color: $primary;
-}
+  .mint-tabbar>.mint-tab-item.is-selected {
+    background: #fafafa;
+  }
+
+  .mint-tab-item-icon {
+    @include wh(22px, 22px);
+  }
+
+  .mint-tabbar {
+    color: #818181;
+    position: fixed;
+  }
+
+  .mint-tabbar>.mint-tab-item.is-selected {
+    color: $primary;
+  }
+
 </style>

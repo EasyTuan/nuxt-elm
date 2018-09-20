@@ -9,22 +9,24 @@
 </template>
 
 <script>
-export default {
-  head: {
-    title: "搜索"
-  },
-  data() {
-    return {
-      value: ""
-    };
-  }
-};
+  export default {
+    head: {
+      title: "搜索"
+    },
+    data() {
+      return {
+        value: ""
+      };
+    }
+  };
+
 </script>
 
 <style lang="scss">
-@import "../assets/styles/mixin";
+  @import "../assets/styles/mixin";
 
-.search-page {
-  padding: px2rem(88px) 0 0 0;
-}
+  .search-page {
+    padding: px2rem(88px) 0 0 0;
+  }
+
 </style>
