@@ -1,43 +1,41 @@
 {
   "name": "nuxt-elm",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Nuxt.js project",
   "author": "[easytuan] <[easytuan@foxmail.com]>",
   "private": true,
   "license": "GPL",
   "scripts": {
-    "dev": "nuxt",
-    "start": "nuxt build && pm2 start ./node_modules/nuxt/bin/nuxt -- start --node-args='--harmony'",
-    "stop": "pm2 stop ./node_modules/nuxt/bin/nuxt -- start",
-    "restart": "nuxt build && pm2 restart ./node_modules/nuxt/bin/nuxt -- start --node-args='--harmony'",
-    "delete": "pm2 delete ./node_modules/nuxt/bin/nuxt -- start",
-    "lint": "eslint --ext .js,.vue --ignore-path .gitignore .",
+    "dev": "cross-env NODE_ENV=development nodemon server/index.js --watch server",
+    "start": "nuxt build && cross-env NODE_ENV=production pm2 start server/index.js --node-args='--harmony' --name 'nuxt-elm'",
+    "stop": "pm2 stop server/index.js --name 'nuxt-elm'",
+    "restart": "nuxt build && cross-env NODE_ENV=production pm2 restart server/index.js --node-args='--harmony' --name 'nuxt-elm'",
+    "delete": "pm2 delete nuxt-elm",
+    "lint": "eslint --cache --fix --ext .js,.vue --ignore-path .gitignore .",
+    "generate": "nuxt generate",
     "tep": "node template",
     "precommit": "npm run lint"
   },
-  "config": {
-    "nuxt": {
-      "host": "0.0.0.0",
-      "port": 3000
-    }
-  },
   "dependencies": {
+    "cross-env": "^5.2.0",
     "axios": "^0.18.0",
     "js-cookie": "^2.2.0",
     "js-md5": "^0.7.3",
     "mint-ui": "^2.2.13",
     "moment": "^2.22.2",
-    "nuxt": "^1.0.0",
+    "nuxt": "^2.0.0",
+    "express": "^4.16.3",
     "pm2": "^3.1.2",
     "postcss-loader": "^3.0.0"
   },
   "devDependencies": {
+    "nodemon": "^1.11.0",
     "@nuxtjs/axios": "^5.3.1",
     "@nuxtjs/proxy": "^1.2.4",
     "babel-eslint": "^8.2.1",
-    "eslint": "^4.15.0",
+    "eslint": "^5.0.1",
     "eslint-friendly-formatter": "^3.0.0",
-    "eslint-loader": "^1.7.1",
+    "eslint-loader": "^2.0.0",
     "eslint-plugin-vue": "^4.0.0",
     "less-loader": "^4.0.5",
     "node-sass": "^4.5.3",

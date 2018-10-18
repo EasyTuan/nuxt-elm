@@ -1,8 +1,12 @@
 <template>
   <div class="newretail-page">
-    <mt-header fixed :title="$route.query.title">
-      <div slot="left" @click="$router.go(-1)">
-        <mt-button icon="back"></mt-button>
+    <mt-header 
+      :title="$route.query.title" 
+      fixed>
+      <div 
+        slot="left" 
+        @click="$router.go(-1)">
+        <mt-button icon="back"/>
       </div>
     </mt-header>
     <ShopList />

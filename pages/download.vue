@@ -1,6 +1,8 @@
 <template>
   <div class="download-page">
-    <img :src="startup" alt="">
+    <img 
+      :src="startup" 
+      alt="">
   </div>
 </template>
 

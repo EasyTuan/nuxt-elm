@@ -1,8 +1,18 @@
 <template>
   <div class="cartcontrol">
-    <svg v-show="food.count>0" @click.stop.prevent="decreaseCart" class="inner" fill="rgb(35, 149, 255)"><use xlink:href="#cart-minus"></use></svg>
-    <div class="cart-count" v-show="food.count>0">{{food.count}}</div>
-    <svg width="24" height="24" fill="rgb(35, 149, 255)" @click="addCart"><use xlink:href="#cart-add"></use></svg>
+    <svg
+      v-show="food.count>0"
+      class="inner"
+      fill="rgb(35, 149, 255)"
+      @click.stop.prevent="decreaseCart"><use xlink:href="#cart-minus"/></svg>
+    <div
+      v-show="food.count>0"
+      class="cart-count">{{ food.count }}</div>
+    <svg
+      width="24"
+      height="24"
+      fill="rgb(35, 149, 255)"
+      @click="addCart"><use xlink:href="#cart-add"/></svg>
   </div>
 </template>
 
@@ -10,11 +20,7 @@
 import Vue from "vue";
 
 export default {
-  props: {
-    food: {
-      type: Object
-    }
-  },
+  props: ['food'],
   methods: {
     addCart(event) {
       if (!this.food.count) {

@@ -5,14 +5,18 @@
       <div class="error-wrapper-message">
         <h2 class="error-message">{{ error.message }}</h2>
       </div>
-      <p class="link" v-if="error.statusCode === 404"><nuxt-link class="error-link" to="/">Back to the home page</nuxt-link></p>
+      <p 
+        v-if="error.statusCode === 404" 
+        class="link"><nuxt-link 
+          class="error-link" 
+          to="/">Back to the home page</nuxt-link></p>
     </div>
   </div>
 </template>
 
 <script>
 export default {
-  name: "nuxt-error",
+  name: "NuxtError",
   props: ["error"],
   head() {
     return {

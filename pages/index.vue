@@ -1,35 +1,55 @@
 <template>
   <div class="home-page">
-    <mt-header fixed title="静安区">
-      <mt-button @click="$router.push('/search')" icon="search" slot="right"></mt-button>
+    <mt-header 
+      fixed 
+      title="静安区">
+      <mt-button 
+        slot="right" 
+        icon="search" 
+        @click="$router.push('/search')"/>
     </mt-header>
     <nav class="nav-container">
-      <div class="nav-item" @click="$router.push({path:'/newretail', query:{ title: item.text }})" v-for="(item, index) in navList"
-        :key="index">
-        <img :src="item.imgUrl" alt="">
-        {{item.text}}
+      <div 
+        v-for="(item, index) in navList" 
+        :key="index" 
+        class="nav-item"
+        @click="$router.push({path:'/newretail', query:{ title: item.text }})">
+        <img 
+          :src="item.imgUrl" 
+          alt="">
+        {{ item.text }}
       </div>
     </nav>
     <div class="show-list">
       <a href="https://h5.ele.me/ranking/#type=quality_meal&activity_id=1&title=%E5%93%81%E8%B4%A8%E5%A5%97%E9%A4%90&navType=0&geohash=wtw3ycy6v7pe">
-        <img :src="show1" alt="">
+        <img 
+          :src="show1" 
+          alt="">
       </a>
       <a href="https://h5.ele.me/sales/#geohash=wtw3ycy6v7pe">
-        <img :src="show2" alt="">
+        <img 
+          :src="show2" 
+          alt="">
       </a>
     </div>
-    <div style="height:5px;clear:both"></div>
+    <div style="height:5px;clear:both"/>
     <div class="swiper">
-      <mt-swipe :auto="3000" style="height:100px;">
-        <mt-swipe-item v-for="(item, index) in bannerList" :key="index">
-          <img :src="item" alt="">
+      <mt-swipe 
+        :auto="3000" 
+        style="height:100px;">
+        <mt-swipe-item 
+          v-for="(item, index) in bannerList" 
+          :key="index">
+          <img 
+            :src="item" 
+            alt="">
         </mt-swipe-item>
       </mt-swipe>
     </div>
-    <div style="height:10px;clear:both"></div>
+    <div style="height:10px;clear:both"/>
     <p class="shoplist-title">—— 推荐商家 ——</p>
     <ShopList />
-    <Tabbar page='0' />
+    <Tabbar page="0" />
   </div>
 </template>
 

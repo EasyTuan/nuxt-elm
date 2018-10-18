@@ -1,8 +1,12 @@
 <template>
   <div class="search-page">
-    <mt-header fixed title="搜索">
-      <router-link to="/" slot="left">
-        <mt-button icon="back"></mt-button>
+    <mt-header 
+      fixed 
+      title="搜索">
+      <router-link 
+        slot="left" 
+        to="/">
+        <mt-button icon="back"/>
       </router-link>
     </mt-header>
   </div>

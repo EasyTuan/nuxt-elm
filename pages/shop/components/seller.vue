@@ -1,15 +1,19 @@
 <template>
   <div class="seller-page">
     <div class="logo">
-      <img :src="banner" alt="">
+      <img 
+        :src="banner" 
+        alt="">
     </div>
-    <h2>{{seller.name}}</h2>
-    <p>{{seller.bulletin}}</p>
-    <a class="brandstory" :href="seller.brandstory">查看品牌故事</a>
-    <div class="placeholder"></div>
+    <h2>{{ seller.name }}</h2>
+    <p>{{ seller.bulletin }}</p>
+    <a 
+      :href="seller.brandstory" 
+      class="brandstory">查看品牌故事</a>
+    <div class="placeholder"/>
     <h2>配送信息</h2>
-    <p>由蜂鸟快送提供配送，约{{seller.deliveryTime}}分钟送达，距离2.1km</p>
-    <p>配送费￥{{seller.deliveryPrice}}</p>
+    <p>由蜂鸟快送提供配送，约{{ seller.deliveryTime }}分钟送达，距离2.1km</p>
+    <p>配送费￥{{ seller.deliveryPrice }}</p>
   </div>
 </template>
 

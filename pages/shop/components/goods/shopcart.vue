@@ -1,50 +1,90 @@
 <template>
   <div class="shopcart">
-    <div class="content" @click="toggleList">
+    <div 
+      class="content" 
+      @click="toggleList">
       <div class="content-left">
         <div class="logo-wrapper">
-          <div class="logo" :class="{'highlight':totalCount>0}">
-            <span class="icon-shopping_cart" v-if="totalCount<=0">
-              <img src="~/assets/images/cart.svg" alt="">
+          <div 
+            :class="{'highlight':totalCount>0}" 
+            class="logo">
+            <span 
+              v-if="totalCount<=0" 
+              class="icon-shopping_cart">
+              <img 
+                src="~/assets/images/cart.svg" 
+                alt="">
             </span>
-            <span class="icon-shopping_cart highlight" v-else>
-              <img src="~/assets/images/cart2.svg" alt="">
+            <span 
+              v-else 
+              class="icon-shopping_cart highlight">
+              <img 
+                src="~/assets/images/cart2.svg" 
+                alt="">
             </span>
           </div>
-          <div class="num" v-show="totalCount>0">{{totalCount}}</div>
+          <div 
+            v-show="totalCount>0" 
+            class="num">{{ totalCount }}</div>
         </div>
-        <div class="price" :class="{'highlight':totalPrice>0}">￥{{totalPrice}}元</div>
-        <div class="desc">另需配送费￥{{deliveryPrice}}元</div>
+        <div 
+          :class="{'highlight':totalPrice>0}" 
+          class="price">￥{{ totalPrice }}元</div>
+        <div class="desc">另需配送费￥{{ deliveryPrice }}元</div>
       </div>
       <div class="content-right">
-        <div class="pay" :class="payClass">{{payDesc}}</div>
+        <div 
+          :class="payClass" 
+          class="pay">{{ payDesc }}</div>
       </div>
     </div>
     <div class="ball-container">
-      <div v-for="(ball, index) in balls" :key="index">
-        <transition name="drop" @before-enter="beforeDrop" @enter="dropping" @after-enter="afterDrop">
-          <div class="ball" v-show="ball.show">
-            <div class="inner inner-hook"></div>
+      <div 
+        v-for="(ball, index) in balls" 
+        :key="index">
+        <transition 
+          name="drop" 
+          @before-enter="beforeDrop" 
+          @enter="dropping" 
+          @after-enter="afterDrop">
+          <div 
+            v-show="ball.show" 
+            class="ball">
+            <div class="inner inner-hook"/>
           </div>
         </transition>
       </div>
     </div>
-    <div class="mark" v-show="listShow" @click="toggleList"></div>
+    <div 
+      v-show="listShow" 
+      class="mark" 
+      @click="toggleList"/>
     <transition name="fold">
-      <div class="shopcart-list" v-show="listShow">
+      <div 
+        v-show="listShow" 
+        class="shopcart-list">
         <div class="list-header">
           <h1 class="title">已选商品</h1>
-          <span class="empty" @click="empty">清空</span>
+          <span 
+            class="empty" 
+            @click="empty">清空</span>
         </div>
-        <div class="list-content" ref="listContent">
+        <div 
+          ref="listContent" 
+          class="list-content">
           <ul>
-            <li class="food" v-for="(food, index) in selectFoods" :key="index">
-              <span class="name">{{food.name}}</span>
+            <li 
+              v-for="(food, index) in selectFoods" 
+              :key="index" 
+              class="food">
+              <span class="name">{{ food.name }}</span>
               <div class="price">
-                <span>￥{{food.price*food.count}}</span>
+                <span>￥{{ food.price*food.count }}</span>
               </div>
               <div class="cartcontrol-wrapper">
-                <cartcontrol @add="addFood" :food="food"></cartcontrol>
+                <cartcontrol 
+                  :food="food" 
+                  @add="addFood"/>
               </div>
             </li>
           </ul>
@@ -58,6 +98,9 @@
   import cartcontrol from "./cartcontrol";
 
   export default {
+    components: {
+      cartcontrol
+    },
     props: {
       selectFoods: {
         type: Array,
@@ -210,9 +253,6 @@
         }
       }
     },
-    components: {
-      cartcontrol
-    }
   };
 
 </script>

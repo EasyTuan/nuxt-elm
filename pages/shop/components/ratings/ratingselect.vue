@@ -1,18 +1,33 @@
 <template>
   <div class="ratingselect">
     <div class="rating-type border-1px">
-      <span @click="select(2,$event)" class="block positive" :class="{'active':selectType===2}">{{desc.all}}
-        <span class="count">{{ratings.length}}</span>
+      <span 
+        :class="{'active':selectType===2}" 
+        class="block positive" 
+        @click="select(2,$event)">{{ desc.all }}
+        <span class="count">{{ ratings.length }}</span>
       </span>
-      <span @click="select(0,$event)" class="block positive" :class="{'active':selectType===0}">{{desc.positive}}<span
-          class="count">{{positives.length}}</span></span>
-      <span @click="select(1,$event)" class="block negative" :class="{'active':selectType===1}">{{desc.negative}}<span
-          class="count">{{negatives.length}}</span></span>
+      <span 
+        :class="{'active':selectType===0}" 
+        class="block positive" 
+        @click="select(0,$event)">{{ desc.positive }}<span
+          class="count">{{ positives.length }}</span></span>
+      <span 
+        :class="{'active':selectType===1}" 
+        class="block negative" 
+        @click="select(1,$event)">{{ desc.negative }}<span
+          class="count">{{ negatives.length }}</span></span>
     </div>
-    <div @click="toggleContent" class="switch" :class="{'on':onlyContent}">
+    <div 
+      :class="{'on':onlyContent}" 
+      class="switch" 
+      @click="toggleContent">
       <!-- <span class="icon-check_circle"></span> -->
-      <svg width="12" height="12" class="check">
-        <use xlink:href="#select"></use>
+      <svg 
+        width="12" 
+        height="12" 
+        class="check">
+        <use xlink:href="#select"/>
       </svg>
       <span class="text">只看有内容的评价</span>
     </div>

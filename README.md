@@ -1,6 +1,6 @@
 # 前言
 
-以nuxt作为vue的服务端渲染，适合刚接触或者准备上vue ssr的同学参考和学习，
+以nuxt2作为vue的服务端渲染，适合刚接触或者准备上vue ssr的同学参考和学习，
 此项目涉及注册、登录、商品展示、地址管理等等，从前端到后端到最后到服务端部署，让你体验到全栈开发到乐趣。
 
 注：项目仿照饿了么H5版本，参考2018最新UI，正常下单请选择饿了么官方客户端。
@@ -21,7 +21,7 @@
 
 # 技术栈
 
-vue2 + vuex + vue-router + mint-ui + nuxt
+vue2 + vuex + vue-router + mint-ui + nuxt2
 
 ## 项目运行
 
@@ -118,19 +118,34 @@ npm run start
 
 ### nuxt模版搭建
 
-这里关于项目初始化，我是直接使用的 `Nuxt` 官网提供的 starter 模板
+这里关于项目初始化，我是直接使用的 `Nuxt` 官网提供的 create-nuxt-app
 
 ```shell
 
-# 安装 vue-cli
-npm install -g vue-cli
+# 确保安装了npx（npx在NPM版本5.2.0默认安装了）：
+npx create-nuxt-app <项目名>
 
-# 初始化项目
-vue init nuxt-community/starter-template nuxt-ssr-demo
-
-# 安装依赖
-cd nuxt-ssr-demo
-npm install
+它会让你进行一些选择:
+  1.在集成的服务器端框架之间进行选择:
+    None (Nuxt默认服务器)
+    Express
+    Koa
+    Hapi
+    Feathers
+    Micro
+    Adonis (WIP)
+  2.选择您喜欢的UI框架:
+    None (无)
+    Bootstrap
+    Vuetify
+    Bulma
+    Tailwind
+    Element UI
+    Buefy
+  3.选择你想要的Nuxt模式 (Universal or SPA)
+  4.添加 axios module 以轻松地将HTTP请求发送到您的应用程序中。
+  5.添加 EsLint 以在保存时代码规范和错误检查您的代码。
+  6.添加 Prettier 以在保存时格式化/美化您的代码。
 
 # 启动本地服务
 npm run dev
@@ -163,14 +178,10 @@ npm run dev
 在 `config/index.js` 中写入：
 
 ```
-
-const json = require('../package.json');
-const port = json.config.nuxt.port;
-
 module.exports = {
   IS_RELEASE: true, // true线上，false测试
 
-  BASE_URL: `http://localhost:${port}/api`, // 测试
+  BASE_URL: `http://localhost:3000/api`, // 测试
 
   // BASE_URL: `https://elm.caibowen.net/api`, // 生产
 
@@ -293,20 +304,19 @@ npm i @nuxtjs/axios @nuxtjs/proxy -D
 到这一步的同学，你得先确保你拥有一个自己的服务器。如果没有的话，赶紧去买一个（我不会和你说AWS和google云有提供免费一年的云服务器试用）
 
 
-OK，文章继续。在进行部署讲解前，我们先看一下 `Nuxt` 提供的几个命令
+OK，文章继续。在进行部署讲解前，我们先看一下开发命令
 
 | 命令            | 描述                                       |
 | ------------- | ---------------------------------------- |
-| nuxt          | 启动一个热加载的 Web 服务器（开发模式） [localhost:3000](http://localhost:3000/) |
-| nuxt build    | 利用 webpack 编译应用，压缩 JS 和 CSS 资源（发布用）      |
-| nuxt start    | 以生成模式启动一个 Web 服务器 (`nuxt build` 会先被执行)   |
-| nuxt generate | 编译应用，并依据路由配置生成对应的 HTML 文件 (用于静态站点的部署)    |
+| dev           | 启动一个热加载的 Web 服务器（开发模式） [localhost:3000](http://localhost:3000/) |
+| start         | 以pm2守护启动一个 Web 服务器 (`nuxt build` 会先被执行)   |
+| generate      | 编译应用，并依据路由配置生成对应的 HTML 文件 (用于静态站点的部署)    |
 
 
 #### 开始部署
 
 
-上传代码到服务器，然后执行命令nuxt build && nuxt start 监听3000端口。
+上传代码到服务器，然后执行命令npm run start 监听3000端口。
 接下来，开始配置你的 nginx （用于端口转发）
 
 ```

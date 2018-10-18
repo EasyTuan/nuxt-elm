@@ -3,7 +3,7 @@
     <div class="ratings-content">
       <div class="overview">
         <div class="overview-left">
-          <h1 class="score">{{seller.score}}</h1>
+          <h1 class="score">{{ seller.score }}</h1>
           <div class="title">
             商家评分
             <rating-star :rating="seller.score" />
@@ -12,38 +12,53 @@
         <div class="overview-right">
           <div class="score-wrapper">
             <span class="title">味道</span>
-            <p class="score">{{seller.serviceScore}}</p>
+            <p class="score">{{ seller.serviceScore }}</p>
           </div>
           <div class="score-wrapper">
             <span class="title">包装</span>
-            <p class="score">{{seller.foodScore}}</p>
+            <p class="score">{{ seller.foodScore }}</p>
           </div>
           <div class="score-wrapper">
             <span class="title">配送</span>
-            <p class="score">{{seller.deliveryTime}}</p>
+            <p class="score">{{ seller.deliveryTime }}</p>
           </div>
         </div>
       </div>
-      <div class="placeholder"></div>
-      <ratingselect @select="selectRating" @toggle="toggleContent" :selectType="selectType" :onlyContent="onlyContent"
-        :ratings="ratings" />
+      <div class="placeholder"/>
+      <ratingselect 
+        :select-type="selectType" 
+        :only-content="onlyContent" 
+        :ratings="ratings" 
+        @select="selectRating"
+        @toggle="toggleContent" />
       <div class="rating-wrapper">
         <ul>
-          <li v-for="(rating, index) in ratings" v-show="needShow(rating.rateType, rating.text)" :key="index" class="rating-item">
+          <li 
+            v-for="(rating, index) in ratings" 
+            v-show="needShow(rating.rateType, rating.text)" 
+            :key="index" 
+            class="rating-item">
             <div class="avatar">
-              <span :style="'background-position: 0 '+rating.avatar"></span>
+              <span :style="'background-position: 0 '+rating.avatar"/>
             </div>
             <div class="content">
-              <h1 class="name">{{rating.username}}</h1>
+              <h1 class="name">{{ rating.username }}</h1>
               <div class="star-wrapper">
-                <rating-star :size="24" :rating="rating.score" />
+                <rating-star 
+                  :size="24" 
+                  :rating="rating.score" />
               </div>
-              <p class="text">{{rating.text}}</p>
-              <div class="recommend" v-show="rating.recommend && rating.recommend.length">
-                <span class="item" v-for="(item, index) in rating.recommend" :key="index">{{item}}</span>
+              <p class="text">{{ rating.text }}</p>
+              <div 
+                v-show="rating.recommend && rating.recommend.length" 
+                class="recommend">
+                <span 
+                  v-for="(item, index) in rating.recommend" 
+                  :key="index" 
+                  class="item">{{ item }}</span>
               </div>
               <div class="time">
-                {{rating.rateTime}}
+                {{ rating.rateTime }}
               </div>
             </div>
           </li>
@@ -60,6 +75,10 @@
   import moment from "moment";
 
   export default {
+    components: {
+      ratingStar,
+      ratingselect
+    },
     props: {
       seller: {
         default: {}
@@ -100,10 +119,6 @@
         this.onlyContent = !this.onlyContent;
       }
     },
-    components: {
-      ratingStar,
-      ratingselect
-    }
   };
 
 </script>

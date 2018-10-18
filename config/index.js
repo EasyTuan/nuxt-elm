@@ -1,10 +1,7 @@
-const json = require('../package.json');
-const port = json.config.nuxt.port;
-
 module.exports = {
   IS_RELEASE: true, // true线上，false测试
 
-  BASE_URL: `http://localhost:${port}/api`, // 测试
+  BASE_URL: `http://localhost:3000/api`, // 测试
 
   // BASE_URL: `https://elm.caibowen.net/api`, // 生产
 

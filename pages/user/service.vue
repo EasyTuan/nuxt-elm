@@ -1,20 +1,32 @@
 <template>
   <div class="service-page">
-    <mt-header fixed title="我的客服">
-      <div slot="left" @click="$router.go(-1)">
-        <mt-button icon="back"></mt-button>
+    <mt-header 
+      fixed 
+      title="我的客服">
+      <div 
+        slot="left" 
+        @click="$router.go(-1)">
+        <mt-button icon="back"/>
       </div>
     </mt-header>
     <section class="service_connect">
-      <a href="https://help.ele.me/#im?from=eleme-app?status=4" class="service_left">
+      <a 
+        href="https://help.ele.me/#im?from=eleme-app?status=4" 
+        class="service_left">
         <svg>
-          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#human"></use>
+          <use 
+            xmlns:xlink="http://www.w3.org/1999/xlink" 
+            xlink:href="#human"/>
         </svg>
         <span>在线客服</span>
       </a>
-      <a href="tel:10105757" class="service_right">
+      <a 
+        href="tel:10105757" 
+        class="service_right">
         <svg>
-          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#phone"></use>
+          <use 
+            xmlns:xlink="http://www.w3.org/1999/xlink" 
+            xlink:href="#phone"/>
         </svg>
         <span>电话客服</span>
       </a>

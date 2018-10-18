@@ -1,14 +1,20 @@
 <template>
   <div class="discover-page">
-    <mt-header fixed title="发现"></mt-header>
+    <mt-header 
+      fixed 
+      title="发现"/>
     <a href="https://h5.ele.me/exchange/">
-      <img :src="discover1" alt="">
+      <img 
+        :src="discover1" 
+        alt="">
     </a>
-    <div style="height:12px;"></div>
+    <div style="height:12px;"/>
     <a href="https://goods.m.duiba.com.cn/mobile/appItemDetail?appItemId=1544968&from=login&spm=14695.1.1.1">
-      <img :src="discover2" alt="">
+      <img 
+        :src="discover2" 
+        alt="">
     </a>
-    <Tabbar page='1' />
+    <Tabbar page="1" />
   </div>
 </template>
 

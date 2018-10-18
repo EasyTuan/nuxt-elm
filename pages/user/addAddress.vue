@@ -1,15 +1,34 @@
 <template>
   <div class="page-addAddress">
-    <mt-header fixed title="添加地址">
-      <div slot="left" @click="$router.go(-1)">
-        <mt-button icon="back"></mt-button>
+    <mt-header 
+      fixed 
+      title="添加地址">
+      <div 
+        slot="left" 
+        @click="$router.go(-1)">
+        <mt-button icon="back"/>
       </div>
     </mt-header>
-    <mt-field label="联系人" placeholder="你的姓名" v-model="name"></mt-field>
-    <mt-field label="电话" placeholder="你的手机号" v-model="phone" type="tel"></mt-field>
-    <mt-field label="地址" placeholder="小区、写字楼、学校等" v-model="address" type="tel"></mt-field>
-    <mt-field label="门牌号" placeholder="10号楼5层501室" v-model="details"></mt-field>
-    <button class="submit-btn" @click="submit()">保存</button>
+    <mt-field 
+      v-model="name" 
+      label="联系人" 
+      placeholder="你的姓名"/>
+    <mt-field 
+      v-model="phone" 
+      label="电话" 
+      placeholder="你的手机号" 
+      type="tel"/>
+    <mt-field 
+      v-model="address" 
+      label="地址" 
+      placeholder="小区、写字楼、学校等"/>
+    <mt-field 
+      v-model="details" 
+      label="门牌号" 
+      placeholder="10号楼5层501室"/>
+    <button 
+      class="submit-btn" 
+      @click="submit()">保存</button>
   </div>
 </template>
 
@@ -37,12 +56,12 @@
     head: {
       title: "添加地址"
     },
+    computed: {
+      ...mapGetters(["userInfo"])
+    },
     mounted() {
       // document.querySelector('title').innerHTML = this.$route.query.title;
       this.initData();
-    },
-    computed: {
-      ...mapGetters(["userInfo"])
     },
     methods: {
       //数据初始化

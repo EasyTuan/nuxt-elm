@@ -1,11 +1,18 @@
 <template>
   <div class="benefit-page">
-    <mt-header fixed title="我的优惠">
-      <div slot="left" @click="$router.go(-1)">
-        <mt-button icon="back"></mt-button>
+    <mt-header 
+      fixed 
+      title="我的优惠">
+      <div 
+        slot="left" 
+        @click="$router.go(-1)">
+        <mt-button icon="back"/>
       </div>
     </mt-header>
-    <img class="benefit-img" :src="benefit" alt="">
+    <img 
+      :src="benefit" 
+      class="benefit-img" 
+      alt="">
     <h2>没有红包</h2>
     <p>快去抢几个吧</p>
   </div>

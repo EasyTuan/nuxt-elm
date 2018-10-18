@@ -2,31 +2,44 @@
   <div class="goods-page">
     <div class="menu-wrapper">
       <ul>
-        <li v-for="(item, index) in goods" :key="index" class="menu-item" @click="selectMenu(index,$event)" :class="{'current':currentIndex === index}">
+        <li 
+          v-for="(item, index) in goods" 
+          :key="index" 
+          :class="{'current':currentIndex === index}" 
+          class="menu-item" 
+          @click="selectMenu(index,$event)">
           <span class="text">
             <!-- <span v-show="item.type>0" class="icon" :class="classMap[item.type]"></span> -->
-            {{item.name}}
+            {{ item.name }}
           </span>
         </li>
       </ul>
     </div>
     <div class="foods-wrapper">
       <ul>
-        <li v-for="(item, index) in goods" :key="index" class="food-list food-list-hook">
-          <h1 class="title" :id="'a'+index">{{item.name}}</h1>
+        <li 
+          v-for="(item, index) in goods" 
+          :key="index" 
+          class="food-list food-list-hook">
+          <h1 
+            :id="'a'+index" 
+            class="title">{{ item.name }}</h1>
           <ul>
-            <li v-for="(food, index) in item.foods" :key="index" class="food-item border-1px">
+            <li 
+              v-for="(food, index) in item.foods" 
+              :key="index" 
+              class="food-item border-1px">
               <div class="icon">
-                <img :src="food.icon" />
+                <img :src="food.icon" >
               </div>
               <div class="content">
-                <h2 class="name">{{food.name}}</h2>
-                <p class="desc">{{food.description}}</p>
+                <h2 class="name">{{ food.name }}</h2>
+                <p class="desc">{{ food.description }}</p>
                 <div class="extra">
-                  <span class="count">月售{{food.sellCount}}份</span><span>好评率{{food.rating}}%</span>
+                  <span class="count">月售{{ food.sellCount }}份</span><span>好评率{{ food.rating }}%</span>
                 </div>
                 <div class="price">
-                  <span class="now">￥<b>{{food.price}}</b></span>
+                  <span class="now">￥<b>{{ food.price }}</b></span>
                   <cartcontrol :food="food" />
                 </div>
               </div>
@@ -35,7 +48,11 @@
         </li>
       </ul>
     </div>
-    <shopcart ref="shopcart" :select-foods='selectFoods' :deliveryPrice="seller.deliveryPrice" :minPrice="seller.minPrice"></shopcart>
+    <shopcart 
+      ref="shopcart" 
+      :select-foods="selectFoods" 
+      :delivery-price="seller.deliveryPrice" 
+      :min-price="seller.minPrice"/>
   </div>
 </template>
 
@@ -45,6 +62,10 @@
   import * as shoppingApi from "~/assets/services/shopping";
 
   export default {
+    components: {
+      shopcart,
+      cartcontrol
+    },
     props: {
       seller: {
         default: {}
@@ -150,10 +171,6 @@
         };
       }
     },
-    components: {
-      shopcart,
-      cartcontrol
-    }
   };
 
 </script>

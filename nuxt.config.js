@@ -1,4 +1,5 @@
 module.exports = {
+  mode: 'spa',
   head: {
     title: '饿了么',
     meta: [
@@ -22,11 +23,6 @@ module.exports = {
   cache: true,
 
   build: {
-    filenames: {
-      manifest: `manifest.[hash]${new Date().getTime()}.js`,
-      vendor: `vendor.[hash]${new Date().getTime()}.js`,
-      app: `app.[chunkhash]${new Date().getTime()}.js`
-    },
     vendor: ['axios', 'mint-ui', 'js-cookie'],
     extend (config, { isDev, isClient }) {
       if (isDev && isClient) {

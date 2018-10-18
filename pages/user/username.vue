@@ -1,15 +1,23 @@
 <template>
   <div class="discover-page">
-    <mt-header fixed title="修改用户名">
-      <div slot="left" @click="$router.go(-1)">
-        <mt-button icon="back"></mt-button>
+    <mt-header 
+      fixed 
+      title="修改用户名">
+      <div 
+        slot="left" 
+        @click="$router.go(-1)">
+        <mt-button icon="back"/>
       </div>
     </mt-header>
-    <div style="height: 10px;"></div>
-    <mt-field placeholder="请输入用户名" v-model="username"></mt-field>
+    <div style="height: 10px;"/>
+    <mt-field 
+      v-model="username" 
+      placeholder="请输入用户名"/>
     <section class="setname">
       <p class="unlikep">用户名长度在2到24位之间</p>
-      <button class="submit" @click="submit()">确认修改</button>
+      <button 
+        class="submit" 
+        @click="submit()">确认修改</button>
     </section>
   </div>
 </template>

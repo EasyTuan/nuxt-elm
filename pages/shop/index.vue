@@ -28,6 +28,12 @@
   import * as shoppingApi from "~/assets/services/shopping";
 
   export default {
+    components: {
+      Header,
+      Goods,
+      Ratings,
+      Seller
+    },
     data() {
       return {
         selected: "goods",
@@ -52,12 +58,6 @@
       //   }
       // })
     },
-    components: {
-      Header,
-      Goods,
-      Ratings,
-      Seller
-    }
   };
 
 </script>
