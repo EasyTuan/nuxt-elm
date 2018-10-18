@@ -79,13 +79,15 @@
         ],
       };
     },
-    async mounted () {
+    async asyncData() {
       const res = await getHomeData();
       res.data.map(item => {
         item.imgUrl = config.IMG_URL + item.imgUrl;
       });
-      this.navList = res.data;
-    },
+      return {
+        navList: res.data
+      };
+    }
   };
 
 </script>
