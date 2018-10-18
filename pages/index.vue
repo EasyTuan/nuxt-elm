@@ -1,47 +1,47 @@
 <template>
   <div class="home-page">
-    <mt-header 
-      fixed 
+    <mt-header
+      fixed
       title="静安区">
-      <mt-button 
-        slot="right" 
-        icon="search" 
+      <mt-button
+        slot="right"
+        icon="search"
         @click="$router.push('/search')"/>
     </mt-header>
     <nav class="nav-container">
-      <div 
-        v-for="(item, index) in navList" 
-        :key="index" 
+      <div
+        v-for="(item, index) in navList"
+        :key="index"
         class="nav-item"
         @click="$router.push({path:'/newretail', query:{ title: item.text }})">
-        <img 
-          :src="item.imgUrl" 
+        <img
+          :src="item.imgUrl"
           alt="">
         {{ item.text }}
       </div>
     </nav>
     <div class="show-list">
       <a href="https://h5.ele.me/ranking/#type=quality_meal&activity_id=1&title=%E5%93%81%E8%B4%A8%E5%A5%97%E9%A4%90&navType=0&geohash=wtw3ycy6v7pe">
-        <img 
-          :src="show1" 
+        <img
+          :src="show1"
           alt="">
       </a>
       <a href="https://h5.ele.me/sales/#geohash=wtw3ycy6v7pe">
-        <img 
-          :src="show2" 
+        <img
+          :src="show2"
           alt="">
       </a>
     </div>
     <div style="height:5px;clear:both"/>
     <div class="swiper">
-      <mt-swipe 
-        :auto="3000" 
+      <mt-swipe
+        :auto="3000"
         style="height:100px;">
-        <mt-swipe-item 
-          v-for="(item, index) in bannerList" 
+        <mt-swipe-item
+          v-for="(item, index) in bannerList"
           :key="index">
-          <img 
-            :src="item" 
+          <img
+            :src="item"
             alt="">
         </mt-swipe-item>
       </mt-swipe>
@@ -79,15 +79,13 @@
         ],
       };
     },
-    async asyncData() {
+    async mounted () {
       const res = await getHomeData();
       res.data.map(item => {
         item.imgUrl = config.IMG_URL + item.imgUrl;
       });
-      return {
-        navList: res.data
-      };
-    }
+      this.navList = res.data;
+    },
   };
 
 </script>
