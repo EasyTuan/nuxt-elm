@@ -21,7 +21,7 @@
 
 # 技术栈
 
-vue2 + vuex + vue-router + mint-ui + nuxt2
+nuxt2 + vue + vuex + vue-router + mint-ui
 
 ## 项目运行
 
