@@ -8,7 +8,7 @@ npm-debug.log
 .nuxt
 
 # Nuxt generate
-dist
+# dist
 
 .DS_Store
 .eslintcache
