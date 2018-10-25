@@ -1,3 +1,5 @@
+简体中文 | [English](./README_zh-EN.md)
+
 # 前言
 
 以nuxt2作为vue的服务端渲染，适合刚接触或者准备上vue ssr的同学参考和学习，
@@ -37,7 +39,7 @@ npm install
 
 npm run dev
 
-#模版快速生成
+# 模版快速生成
 npm run tep `文件名`
 
 # pm2部署
@@ -68,20 +70,20 @@ npm run start
 
 目录结构
 
-    ├── assets               // 静态资源
-    │   ├── images                // 图片资源
-    │   ├── services              // api请求
-    │   ├── styles                // 样式文件
-    │   └── utils                 // 常用工具类
-    ├── components           // 组件
+    ├── assets                    // 静态资源
+    │   ├── images                    // 图片资源
+    │   ├── services                  // api请求
+    │   ├── styles                    // 样式文件
+    │   └── utils                     // 常用工具类
+    ├── components                // 组件
     ├── config
-    │   └── index.js              // 配置文件
-    ├── layouts              // 布局
-    ├── middleware           // 中间件
-    ├── pages                // 页面
-    ├── plugins              // 插件
-    ├── static               // 静态资源
-    └── store                //vuex状态树
+    │   └── index.js                  // 配置文件
+    ├── layouts                  // 布局
+    ├── middleware               // 中间件
+    ├── pages                    // 页面
+    ├── plugins                  // 插件
+    ├── static                   // 静态资源
+    └── store                    //vuex状态树
 
 
 ## 部分截图展示
@@ -153,21 +155,6 @@ npm run dev
 ```
 
 访问 http://localhost:3000 ，现在我们来看下初始化好的项目目录
-
-```shell
-
-├── assets                      // 静态资源
-├── components                  // 全局组件
-├── layouts                     // 页面布局
-├── middleware                  // 中间件
-├── pages                       // 路由页面
-├── static                      // 静态资源，打包文件名不会被hash
-├── store                       // vuex
-├── nuxt.config.js              // nuxt配置文件
-├── package.json
-├── README.md
-
-```
 
 注意：nuxt默认会读取pages里面的vue文件，自动生成路由，如需要自定义路由，可在nuxt.config.js中配置对应参数。
 
