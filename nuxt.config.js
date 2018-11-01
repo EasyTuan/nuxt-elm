@@ -36,21 +36,6 @@ module.exports = {
     }
   },
 
-  modules: [
-    '@nuxtjs/axios',
-    '@nuxtjs/proxy'
-  ],
-  proxy: [
-    [
-      '/api',{
-        // target: 'http://localhost:9000',
-        target: '//elm-api.caibowen.net',
-        changeOrigin: true,
-        pathRewrite: { '^/api' : '/' }
-      }
-    ]
-  ],
-
   plugins: [
     { src: '~plugins/mint-ui' },
     { src: '~assets/styles/base.scss' },

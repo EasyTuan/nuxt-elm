@@ -2,11 +2,11 @@
   <div class="goods-page">
     <div class="menu-wrapper">
       <ul>
-        <li 
-          v-for="(item, index) in goods" 
-          :key="index" 
-          :class="{'current':currentIndex === index}" 
-          class="menu-item" 
+        <li
+          v-for="(item, index) in goods"
+          :key="index"
+          :class="{'current':currentIndex === index}"
+          class="menu-item"
           @click="selectMenu(index,$event)">
           <span class="text">
             <!-- <span v-show="item.type>0" class="icon" :class="classMap[item.type]"></span> -->
@@ -17,17 +17,17 @@
     </div>
     <div class="foods-wrapper">
       <ul>
-        <li 
-          v-for="(item, index) in goods" 
-          :key="index" 
+        <li
+          v-for="(item, index) in goods"
+          :key="index"
           class="food-list food-list-hook">
-          <h1 
-            :id="'a'+index" 
+          <h1
+            :id="'a'+index"
             class="title">{{ item.name }}</h1>
           <ul>
-            <li 
-              v-for="(food, index) in item.foods" 
-              :key="index" 
+            <li
+              v-for="(food, index) in item.foods"
+              :key="index"
               class="food-item border-1px">
               <div class="icon">
                 <img :src="food.icon" >
@@ -48,10 +48,10 @@
         </li>
       </ul>
     </div>
-    <shopcart 
-      ref="shopcart" 
-      :select-foods="selectFoods" 
-      :delivery-price="seller.deliveryPrice" 
+    <shopcart
+      ref="shopcart"
+      :select-foods="selectFoods"
+      :delivery-price="seller.deliveryPrice"
       :min-price="seller.minPrice"/>
   </div>
 </template>
@@ -162,11 +162,9 @@
       throttle(method, delay) {
         var timer = null;
         return function () {
-          var context = this,
-            args = arguments;
           clearTimeout(timer);
-          timer = setTimeout(function () {
-            method.apply(context, args);
+          timer = setTimeout(() => {
+            method.apply(this, arguments);
           }, delay);
         };
       }

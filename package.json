@@ -17,21 +17,20 @@
     "precommit": "npm run lint"
   },
   "dependencies": {
-    "cross-env": "^5.2.0",
     "axios": "^0.18.0",
+    "cross-env": "^5.2.0",
+    "express": "^4.16.3",
+    "express-http-proxy": "^1.4.0",
     "js-cookie": "^2.2.0",
     "js-md5": "^0.7.3",
     "mint-ui": "^2.2.13",
     "moment": "^2.22.2",
     "nuxt": "^2.0.0",
-    "express": "^4.16.3",
     "pm2": "^3.1.2",
     "postcss-loader": "^3.0.0"
   },
   "devDependencies": {
     "nodemon": "^1.11.0",
-    "@nuxtjs/axios": "^5.3.1",
-    "@nuxtjs/proxy": "^1.2.4",
     "babel-eslint": "^8.2.1",
     "eslint": "^5.0.1",
     "eslint-friendly-formatter": "^3.0.0",
