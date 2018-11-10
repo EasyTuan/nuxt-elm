@@ -1,9 +1,9 @@
 export default {
   IS_RELEASE: true, // true线上，false测试
 
-  BASE_URL: 'http://localhost:3000/api', // 测试
+  // BASE_URL: 'http://localhost:3000/api', // 测试
 
-  // BASE_URL: '//elm.caibowen.net/api', // 生产
+  BASE_URL: '//elm.caibowen.net/api', // 生产
 
   // IMG_URL: 'http://localhost:9000/', // 测试
 
