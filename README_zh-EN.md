@@ -333,9 +333,9 @@ However, the current `Nuxt` overall needs to be improved. At present, the commun
 
 Anyway, I hope the `Nuxt` community can get better and better~
 
-# Donation
+# Sponsorship
 
-If you are helpful, welcome to reward
+If you are helpful, welcome sponsorship
 
 After receiving the sponsorship, I will promptly update the [sponsorship wall](https://caibowen.net/sponsor)
 

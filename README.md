@@ -336,9 +336,9 @@ nginx -s restart
 
 不管如何，希望 `Nuxt` 社区可以越来越好吧 ~
 
-# 捐助
+# 赞助
 
-如有帮助，欢迎打赏
+如有帮助，欢迎赞助
 
 收到赞助款后，我会及时更新[赞助墙](https://caibowen.net/sponsor)
 
