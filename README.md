@@ -53,6 +53,10 @@ npm run start
 
 如果只做前端开发，请忽略这句话。
 
+## 休闲一刻
+
+<img src="screenshots/gh_a896d27a50a3_430.jpg" width="250"/> <img src="screenshots/gh_44a51ea2dd08_430.jpg" width="250"/>
+
 
 # 目标功能
 - [x] 商家列表 -- 完成
